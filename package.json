@@ -1,0 +1,28 @@
+{
+	"name": "test",
+	"version": "1.0.0",
+	"description": "",
+	"license": "MIT",
+	"repository": "<%= githubUsername %>/<%= moduleName %>",
+	"author": {
+		"name": "<%= name %>",
+		"email": "<%= email %>",
+		"url": "<%= website %>"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && ava",
+		"dev": "nodemon index.js"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		""
+	],
+	"dependencies": {
+		"camel-case": "^3.0.0"
+	}
+}
