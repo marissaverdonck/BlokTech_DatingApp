@@ -1,7 +1,7 @@
 {
-  "name": "BlokTech_DatingApp",
+  "name": "InterMatching",
   "version": "1.0.0",
-  "description": "InterMatching",
+  "description": "Blok Tech DatingApp",
   "main": "server.js",
   "dependencies": {
     "camel-case": "^3.0.0"
@@ -11,7 +11,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
