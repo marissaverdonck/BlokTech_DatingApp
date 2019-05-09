@@ -1,6 +1,7 @@
-# BlokTech_DatingApp
+# InterMatching
 
 ## Installation
+`npm install InterMatching`
 
 ## Usage
 
