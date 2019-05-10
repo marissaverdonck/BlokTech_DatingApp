@@ -29,22 +29,24 @@ h2,
 legend {
     font-family: 'Avenir_Light';
     font-size: 2.5em;
-     font-weight: 100;
+    font-weight: 100;
 }
 
-h3{
+h3 {
     font-family: 'Avenir_Black';
     font-size: 1.5em;
 }
 
 h4,
-fieldset label {font-family: 'Avenir_Black';
+fieldset label {
+    font-family: 'Avenir_Black';
     font-size: 1em;
     font-weight: 100;
 }
 
 p,
-a {font-family: 'Avenir_Light';
+a {
+    font-family: 'Avenir_Light';
     font-size: 1em;
     font-weight: 100;
 }
@@ -60,30 +62,31 @@ body {
     box-sizing: border-box;
 }
 
-section#logo{
+section#logo {
     background-color: #ebbab5;
-margin: 0em;
+    margin: 0em;
     padding: 1em;
 
 }
-section#logo img[alt="logo_intermatching"]{
+
+section#logo img[alt="logo_intermatching"] {
     width: 60%;
     max-width: 19em;
-   margin: 0 auto;
-   padding-top: 2em;
-   display: block;
+    margin: 0 auto;
+    padding-top: 2em;
+    display: block;
 }
 
-section#logo h1{
+section#logo h1 {
     text-align: center;
-     color: #ffffff;
+    color: #ffffff;
     margin: 0 auto;
 }
 
-section#login{
+section#login {
     background-color: #ebbab5;
     color: #ffffff;
-      padding: 0 1em 1em 1em;
+    padding: 0 1em 1em 1em;
 }
 
 
@@ -95,6 +98,7 @@ section#login form fieldset {
     flex-direction: column;
     max-width: 25em;
 }
+
 section#login form fieldset label {
     margin: 0.3em 0 0.3em;
 }
@@ -105,7 +109,8 @@ section#login form fieldset [type=email] {
     border-radius: 2em;
     border: none;
     font-family: 'Avenir_Light';
-    font-size: 90%;}
+    font-size: 90%;
+}
 
 section#login form fieldset [type=password] {
     padding: .7em;
@@ -113,7 +118,8 @@ section#login form fieldset [type=password] {
     border-radius: 2em;
     border: none;
     font-family: 'Avenir_Light';
-    font-size: 90%;}
+    font-size: 90%;
+}
 
 section#login form fieldset [type=submit] {
     font-family: 'Avenir_Light';
@@ -127,29 +133,30 @@ section#login form fieldset [type=submit] {
     border: none;
 }
 
-section#login form article{
-text-align: center;
+section#login form article {
+    text-align: center;
 
 }
-section#login form article a{
-color: #ffffff;
+
+section#login form article a {
+    color: #ffffff;
 }
 
 /*Zoekpagina*/
 
-header{
+header {
     background-color: #c58747;
     color: #ffffff;
-    top:0;
+    top: 0;
 }
 
-header h2{
+header h2 {
     padding: 0.2em;
     text-align: center;
     margin: 0 auto;
 }
 
-section#matches{
+section#matches {
     color: #ebbab5;
     background-color: #ffffff;
     padding: 1em;
@@ -158,49 +165,72 @@ section#matches{
 
 }
 
-section#matches h3{
-padding: 0;
+section#matches h3 {
+    padding: 0;
     margin: 1em auto;
 }
 
-section#matches img{
-width: 8em;
+section#matches img {
+    width: 8em;
     height: 8em;
     border-radius: 50%;
     overflow: hidden;
 }
 
-section#interesses{
+section#interesses {
     background-color: #fff8f3;
     padding: 1em;
     max-width: 35em;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 49% 49%;
-     grid-gap: 1em;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
 
 }
 
-section#interesses h3{
+section#interesses h3 {
     color: #ebbab5;
-  grid-column: 1/3;
+    grid-column: 1/3;
 }
 
-section#interesses article{
-background-color: #ffffff;
+section#interesses article {
+    background-color: #ffffff;
     border-radius: 1em;
+    display: flex;
+    height: 18em;
+    justify-content: left;
+    position: relative;
 }
 
-section#interesses article img:first-child{
-        width: 100%;
-        overflow: hidden;
-        height: auto;
+section#interesses article img:first-child {
+    width: 100%;
+    height: 15em;
+    overflow: hidden;
     border-top-left-radius: .75em;
     border-top-right-radius: .75em;
 }
-section#interesses article img{
-width: 2em;
-    height: 2em;
-    height: auto;
+
+section#interesses article img {
+    width: 1.2em;
+    height: 1.2em;
+    grid-column: 1/2;
 }
 
+section#interesses article img[alt="like"] {
+    position: absolute;
+    bottom: 1em;
+    left: 3em;
+}
+
+section#interesses img[alt="dislike"] {
+    position: absolute;
+    bottom: 1em;
+    right: 3em
+
+}
+
+section#interesses article h4 {
+    color: #ffffff;
+    position: absolute;
+    bottom: .4em;
+}
