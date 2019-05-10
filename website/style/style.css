@@ -1,0 +1,206 @@
+@font-face {
+    font-family: 'Avenir_Light';
+    src: url('Avenir_Light.otf');
+}
+
+@font-face {
+    font-family: 'Avenir_Book';
+    src: url('Avenir_Book.otf');
+}
+
+@font-face {
+    font-family: 'Avenir_Black';
+    src: url('Avenir_Black.otf');
+}
+
+@font-face {
+    font-family: 'Strawberry_Blossom';
+    src: url('Strawberry_Blossom.otf');
+}
+
+h1 {
+    font-family: 'Strawberry_Blossom';
+    font-size: 4.5em;
+    font-weight: 500;
+}
+
+
+h2,
+legend {
+    font-family: 'Avenir_Light';
+    font-size: 2.5em;
+     font-weight: 100;
+}
+
+h3{
+    font-family: 'Avenir_Black';
+    font-size: 1.5em;
+}
+
+h4,
+fieldset label {font-family: 'Avenir_Black';
+    font-size: 1em;
+    font-weight: 100;
+}
+
+p,
+a {font-family: 'Avenir_Light';
+    font-size: 1em;
+    font-weight: 100;
+}
+
+
+body {
+    color: #202020;
+    width: 100%;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+section#logo{
+    background-color: #ebbab5;
+margin: 0em;
+    padding: 1em;
+
+}
+section#logo img[alt="logo_intermatching"]{
+    width: 60%;
+    max-width: 19em;
+   margin: 0 auto;
+   padding-top: 2em;
+   display: block;
+}
+
+section#logo h1{
+    text-align: center;
+     color: #ffffff;
+    margin: 0 auto;
+}
+
+section#login{
+    background-color: #ebbab5;
+    color: #ffffff;
+      padding: 0 1em 1em 1em;
+}
+
+
+section#login form fieldset {
+    border: none;
+    margin: 0 auto;
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    max-width: 25em;
+}
+section#login form fieldset label {
+    margin: 0.3em 0 0.3em;
+}
+
+section#login form fieldset [type=email] {
+    padding: .7em .7em .7em 1em;
+    width: 100%;
+    border-radius: 2em;
+    border: none;
+    font-family: 'Avenir_Light';
+    font-size: 90%;}
+
+section#login form fieldset [type=password] {
+    padding: .7em;
+    width: 100%;
+    border-radius: 2em;
+    border: none;
+    font-family: 'Avenir_Light';
+    font-size: 90%;}
+
+section#login form fieldset [type=submit] {
+    font-family: 'Avenir_Light';
+    font-size: 1em;
+    background-color: #c58747;
+    color: #ffffff;
+    padding: .7em 0;
+    border-radius: 2em;
+    margin: 1.5em auto;
+    width: 100%;
+    border: none;
+}
+
+section#login form article{
+text-align: center;
+
+}
+section#login form article a{
+color: #ffffff;
+}
+
+/*Zoekpagina*/
+
+header{
+    background-color: #c58747;
+    color: #ffffff;
+    top:0;
+}
+
+header h2{
+    padding: 0.2em;
+    text-align: center;
+    margin: 0 auto;
+}
+
+section#matches{
+    color: #ebbab5;
+    background-color: #ffffff;
+    padding: 1em;
+    margin: 0 auto;
+    max-width: 35em;
+
+}
+
+section#matches h3{
+padding: 0;
+    margin: 1em auto;
+}
+
+section#matches img{
+width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+section#interesses{
+    background-color: #fff8f3;
+    padding: 1em;
+    max-width: 35em;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 49% 49%;
+     grid-gap: 1em;
+
+}
+
+section#interesses h3{
+    color: #ebbab5;
+  grid-column: 1/3;
+}
+
+section#interesses article{
+background-color: #ffffff;
+    border-radius: 1em;
+}
+
+section#interesses article img:first-child{
+        width: 100%;
+        overflow: hidden;
+        height: auto;
+    border-top-left-radius: .75em;
+    border-top-right-radius: .75em;
+}
+section#interesses article img{
+width: 2em;
+    height: 2em;
+    height: auto;
+}
+
