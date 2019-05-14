@@ -64,6 +64,8 @@ body {
     box-sizing: border-box;
 }
 
+/* Login page */
+
 section#logo {
     background-color: #ebbab5;
     margin: 0em;
@@ -144,7 +146,7 @@ section#login form article a {
     color: #ffffff;
 }
 
-/*Zoekpagina*/
+/*Search page*/
 
 header {
     background-color: #c58747;
@@ -182,7 +184,7 @@ section#matches img {
 
 section#interesses {
     background-color: #fff8f3;
-    padding: 1.5em 2em;
+    padding: 1.5em 1em;
     max-width: 35em;
     margin: 0 auto;
     border-radius: .75em;
@@ -190,46 +192,47 @@ section#interesses {
 
 section#interesses h3 {
     color: #ebbab5;
-    margin: 0 0 1em 0;
+    margin: .3em 0 1.3em 0;
 }
 
 section#interesses article {
     background-color: #ffffff;
     border-radius: 1em;
-    display: flex;
-    height: 28em;
-    justify-content: left;
-    position: relative;
-    margin-bottom: 2em;
+    justify-content: center;
+    margin-bottom: 4em;
 }
 
-section#interesses article img:first-child {
-    width: 100%;
-    height: auto;
-    max-height: 25em;
+section#interesses article img.interest {
     overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
     border-top-left-radius: .75em;
     border-top-right-radius: .75em;
 }
 
-section#interesses article img {
+section#interesses article div {
+    background-color: #ffffff;
+    display: flex;
+    height: 3.5em;
+    justify-content: space-around;
+    margin-top: 0;
+    border-bottom-left-radius: .75em;
+    border-bottom-right-radius: .75em;
+}
+
+section#interesses article div img {
     width: 1.2em;
     height: 1.2em;
-    grid-column: 1/2;
+    margin: auto;
 }
 
-section#interesses article img[alt="like"] {
-    position: absolute;
-    bottom: 1em;
-    left: 3em;
+section#interesses article div img[alt="like"] {
     width: 1.4em;
     height: 1.2em;
+
 }
 
-section#interesses img[alt="dislike"] {
-    position: absolute;
-    bottom: 1em;
-    right: 3em;
+section#interesses div img[alt="dislike"] {
     width: 1.2em;
     height: 1.2em;
 
@@ -237,7 +240,71 @@ section#interesses img[alt="dislike"] {
 
 section#interesses article h4 {
     color: #ffffff;
-    position: absolute;
-    bottom: 1.9em;
-    left: .5em;
+    margin: -2.5em 0 1em .5em;
+
+}
+
+/* Notifications page */
+
+section#notifications {
+    background-color: #ffffff;
+    padding: 1em;
+    margin: 0 auto;
+    max-width: 35em;
+}
+
+
+section#notifications article {
+    display: flex;
+}
+
+section#notifications article p {
+    margin: auto 0;
+    color: #e1a799;
+}
+
+section#notifications article img {
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 1em;
+}
+
+
+
+
+
+/* Footer menu */
+
+footer {
+    box-shadow: 0 0 0.625em 0 rgba(0, 0, 0, .15);
+    padding: .7em 0em .7em 1em;
+    background-color: #ffffff;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+footer nav ul li a img {
+    max-height: 1.4em;
+    margin-right: 1.2em;
+    display: block;
+}
+
+footer nav ul li a img:hover {
+    opacity: .6;
+    transition: .2s linear;
+}
+
+footer nav ul {
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
