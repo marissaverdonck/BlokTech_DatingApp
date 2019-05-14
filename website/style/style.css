@@ -107,7 +107,7 @@ section#login form fieldset label {
     margin: 0.3em 0 0.3em;
 }
 
-section#login form fieldset [type=email] {
+section#login form fieldset input {
     padding: .7em .7em .7em 1em;
     width: 100%;
     border-radius: 2em;
@@ -116,14 +116,6 @@ section#login form fieldset [type=email] {
     font-size: 90%;
 }
 
-section#login form fieldset [type=password] {
-    padding: .7em;
-    width: 100%;
-    border-radius: 2em;
-    border: none;
-    font-family: 'Avenir_Light';
-    font-size: 90%;
-}
 
 section#login form fieldset [type=submit] {
     font-family: 'Avenir_Light';
@@ -146,19 +138,41 @@ section#login form article a {
     color: #ffffff;
 }
 
-/*Search page*/
+/*Header*/
 
 header {
     background-color: #c58747;
     color: #ffffff;
     top: 0;
+
 }
 
 header h2 {
     padding: 0.2em;
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto 0 auto;
+
+
 }
+
+header img[alt="settings"] {
+    width: 2em;
+    height: 2em;
+    margin: -3.2em 0.5em;
+    padding: 0;
+    float: right;
+}
+
+header img[alt="back"] {
+    width: 2em;
+    height: 2em;
+    margin: 1.2em 0.5em;
+    padding: 0;
+    float: left;
+}
+
+
+/*Search page*/
 
 section#matches {
     background-color: #ffffff;
@@ -184,7 +198,7 @@ section#matches img {
 
 section#interesses {
     background-color: #fff8f3;
-    padding: 1.5em 1em;
+    padding: 1.5em 1.5em;
     max-width: 35em;
     margin: 0 auto;
     border-radius: .75em;
@@ -228,7 +242,7 @@ section#interesses article div img {
 
 section#interesses article div img[alt="like"] {
     width: 1.4em;
-    height: 1.2em;
+    height: 1.4em;
 
 }
 
@@ -270,6 +284,134 @@ section#notifications article img {
     overflow: hidden;
     margin: 1em;
 }
+
+
+/* Profile page */
+
+section#profile {
+    text-align: center;
+}
+
+section#profile img {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    margin: 1em;
+    padding: 0;
+}
+
+section#profile div {
+    margin-bottom: 1.5em;
+}
+
+section#profile div p {
+    padding: 0;
+    margin: 0;
+    color: #ebbab5;
+}
+
+section#your_interests {
+    background-color: #fff8f3;
+    padding: 1.5em 1em;
+    max-width: 40em;
+    margin: 0 auto;
+    border-radius: .75em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: .8em;
+}
+
+section#your_interests h3 {
+    color: #ebbab5;
+    margin: 0em 0 0em 0;
+    grid-column: 1/3;
+}
+
+section#your_interests article {
+    border-radius: 1em;
+    justify-content: center;
+    margin-bottom: 4em;
+}
+
+section#your_interests article img:first-child {
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: .75em;
+}
+
+section#your_interests article div {
+    display: flex;
+    justify-content: center;
+}
+
+section#your_interests article div h4 {
+    color: #ffffff;
+    margin: -2.2em 0 0 .5em;
+    padding: 0;
+    word-break:break-all;
+    line-height: 1em;
+}
+
+section#your_interests article div img {
+    width: 1.3em;
+    height: 1.3em;
+    margin: -2.5em .75em 0em auto;
+    padding: 0;
+
+}
+
+/* Settings page */
+
+section#settings {
+    background-color: #fff8f3;
+    color: #ebbab5;
+    padding: 0 1em 1em 1em;
+}
+
+section#settings form img {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    margin: 1em auto;
+    padding: 0;
+}
+
+section#settings form fieldset {
+    border: none;
+    margin: 0 auto;
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    max-width: 25em;
+}
+
+section#settings form fieldset label {
+    margin: 0.3em 0 0.3em;
+}
+
+section#settings form fieldset input {
+    padding: .7em .7em .7em 1em;
+    width: 100%;
+    border-radius: 2em;
+    border: none;
+    font-family: 'Avenir_Light';
+    font-size: 90%;
+}
+
+
+section#settings form fieldset [type=submit] {
+    font-family: 'Avenir_Light';
+    font-size: 1em;
+    background-color: #c58747;
+    color: #ffffff;
+    padding: .7em 0;
+    border-radius: 2em;
+    margin: 1.5em auto;
+    width: 100%;
+    border: none;
+}
+
 
 
 
