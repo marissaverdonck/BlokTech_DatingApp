@@ -1,3 +1,5 @@
+//http://localhost:3000
+
 const camelCase = require('camel-case')
 const express = require('express')
 const app = express()
@@ -37,7 +39,7 @@ app.use(function(req, res){
     res.status(404).render('not-found')
     });
   
-// Gives the port using
+// Gives the portnumber
 app.listen(port, function() {
     console.log('The app listening on port ${port}!')
     });
