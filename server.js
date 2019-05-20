@@ -6,70 +6,59 @@ const app = express()
 const port = 3000
 
 //Serve files from the static folder
-app.use(express.static('static'))
+app.use(express.static('static'));
 //Use ejs for templating
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 //Load templates from the 'views' folder
-app.set('views', 'views')
+app.set('views', 'views');
 
 // Announce the pages to the browser
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
     res.render('index')
-}
-);
-app.get('/notifications', function (req, res) {
+});
+app.get('/notifications', function(req, res) {
     res.render('notifications')
-}
-);
-app.get('/profile', function (req, res) {
+});
+app.get('/profile', function(req, res) {
     res.render('profile')
-}
-);
-app.get('/search', function (req, res) {
+});
+app.get('/search', function(req, res) {
     res.render('search')
-}
-);
-app.get('/settings', function (req, res) {
+});
+app.get('/settings', function(req, res) {
     res.render('settings')
-}
-);
-app.get('/about', function (req, res) {
+});
+app.get('/about', function(req, res) {
     res.render('About')
-}
-);
-app.get('/login', function (req, res) {
+});
+app.get('/login', function(req, res) {
     res.render('Login')
-}
-);
-app.get('/createaccount1', function (req, res) {
+});
+app.get('/createaccount1', function(req, res) {
     res.render('createaccount1')
-}
-);
-app.get('/createaccount2', function (req, res) {
+});
+app.get('/createaccount2', function(req, res) {
     res.render('createaccount2')
-}
-);
-app.get('/createaccount3', function (req, res) {
+});
+app.get('/createaccount3', function(req, res) {
     res.render('createaccount3')
-}
-);
-app.get('/changeinterests', function (req, res) {
+});
+app.get('/changeinterests', function(req, res) {
     res.render('changeinterests')
-}
-);
-app.get('/user1', function (req, res) {
+});
+app.get('/user1', function(req, res) {
     res.render('user1')
-}
-);
-
-
+});
+app.get('/itsamatch', function(req, res) {
+    res.render('itsamatch')
+});
 // If no valid URL was found, send the "not-found page"
-app.use(function (req, res) {
+app.use(function(req, res) {
     res.status(404).render('not-found')
 });
 
 // Gives the portnumber
-app.listen(port, function () {
+app.listen(port, function() {
     console.log('The app listening on port ${port}!')
 });
 
