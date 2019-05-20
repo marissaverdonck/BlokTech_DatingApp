@@ -1,37 +1,31 @@
 <% include partials/head %>
- <body>
-<section id="logo">
-<img src="images/logo.png" alt="logo_intermatching">
-    <h1>InterMatching</h1></section>
 
-    <!-- Formulier -->
+    <body>
+        <section id="logo">
+            <img src="images/logo.png" alt="logo_intermatching">
+            <h1>InterMatching</h1>
+        </section>
 
-    <section id="login">
-        <form action="login.html" method="get">
-            <fieldset>
-                <legend></legend>
+        <section id="login">
+            <form action="search" method="get">
+                <fieldset>
+                    <legend></legend>
+                    <p>Search for your perfect match based on interests. </p>
+                    <label for="email"> E-mailadres </label>
+                    <input id="email" type="email" placeholder="naam@mail.com" required>
+                    <label for="wachtwoord"> Wachtwoord </label>
+                    <input id="wachtwoord" type="password">
+                    <input id="button" type="submit" name="login" value="Login" />
+                    <article id="anders">
+                        <a href="login.html"> Forgot your Password?</a>
+                        <a href="createaccount1"> Create an account</a></article>
+                </fieldset>
+            </form>
+        </section>
 
-                <p>Search for your perfect match based on interests. </p>
-
-                <label for="email"> E-mailadres </label>
-                <input id="email" type="email" placeholder="naam@mail.com" required>
-
-                <label for="wachtwoord"> Wachtwoord </label>
-                <input id="wachtwoord" type="password">
-
-                <a href="search"><input id="button" type="submit" name="login" value="Login" /></a>
-
-                <article id="anders"><a href="login.html"> Wachtwoord vergeten?</a>
-                <p>Nog geen acount?</p><a href="login.html"> Meld je aan</a></article>
-            </fieldset>
-
-        </form>
-
-
+        <script type="text/javascript" src="/server.js"></script>
+        <script type="text/javascript" src="script/script.js"></script>
 
     </body>
 
-    </section>
-
-    </body>
-</html>
+    </html>

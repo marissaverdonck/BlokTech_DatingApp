@@ -24,12 +24,11 @@ h1 {
     font-weight: 500;
 }
 
-
 h2,
 legend {
-    font-family: 'Strawberry_Blossom';
-    font-size: 3em;
-    font-weight: 100;
+    font-family: 'Avenir_Light';
+    font-size: 1.8em;
+    font-weight: 10;
 }
 
 h3 {
@@ -41,21 +40,48 @@ h3 {
 h4,
 fieldset label {
     font-family: 'Avenir_Black';
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 100;
 }
 
+h5,
+legend {
+    font-family: 'Avenir_Light';
+    font-size: 1.5em;
+    font-weight: 10;
+}
+
 p,
-a {
+a,
+input {
     font-family: 'Avenir_Light';
     font-size: 1em;
     font-weight: 100;
 }
 
+a button {
+    font-family: 'Avenir_Light';
+    font-size: 1em;
+    background-color: #c58747;
+    color: #ffffff;
+    padding: .7em 0;
+    border-radius: 2em;
+    margin: 0em auto;
+    width: 100%;
+    border: none;
+    max-width: 23.5em;
+    display: block;
+    text-align: center;
+}
+
+html {
+    height: 100%
+}
 
 body {
     color: #202020;
     width: 100%;
+    height: 100%;
     margin: 0;
     background: #ffffff;
 }
@@ -64,13 +90,13 @@ body {
     box-sizing: border-box;
 }
 
+
 /* Login page */
 
 section#logo {
     background-color: #ebbab5;
     margin: 0em;
     padding: 1em;
-
 }
 
 section#logo img[alt="logo_intermatching"] {
@@ -91,8 +117,12 @@ section#login {
     background-color: #ebbab5;
     color: #ffffff;
     padding: 0 1em 1em 1em;
+    min-height: 30em;
 }
 
+section#login p {
+    margin-bottom: 2em;
+}
 
 section#login form fieldset {
     border: none;
@@ -116,7 +146,6 @@ section#login form fieldset input {
     font-size: 90%;
 }
 
-
 section#login form fieldset [type=submit] {
     font-family: 'Avenir_Light';
     font-size: 1em;
@@ -131,31 +160,66 @@ section#login form fieldset [type=submit] {
 
 section#login form article {
     text-align: center;
-
 }
 
 section#login form article a {
     color: #ffffff;
+    display: block;
 }
+
 
 /*Header*/
 
 header {
-    background-color: #c58747;
-    color: #ffffff;
+    background-color: rgba(197, 135, 71, .90);
     top: 0;
-
+    box-shadow: -7px 10px 11px -4px rgba(0, 0, 0, 0.18);
+    z-index: 100;
+    position: fixed;
+    width: 100%;
 }
 
-header h2 {
+header nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    padding: 0.5em;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 0.5em;
+}
+
+header nav ul li:first-child {
+    margin: 0 0 0 0.5em
+}
+
+header nav ul li:nth-child(2) {
+    margin: 0 auto;
+}
+
+header nav ul li img[alt="logo"] {
+    width: 3em;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li img {
+    width: 1.5em;
+    margin: 0;
+}
+
+header nav ul li h2 {
     padding: 0.2em;
     text-align: center;
-    margin: 0 auto 0 auto;
-
-
+    color: #ffffff;
+    margin: 0;
+    padding: 0
 }
 
-header img[alt="settings"] {
+header nav ul li img[alt="settings"] {
     width: 2em;
     height: 2em;
     margin: -3.2em 0.5em;
@@ -164,22 +228,29 @@ header img[alt="settings"] {
 }
 
 header img[alt="back"] {
-    width: 2em;
-    height: 2em;
+    width: 1.8em;
+    height: auto;
     margin: 1.2em 0.5em;
     padding: 0;
     float: left;
+}
+
+a#back {
+    margin: 0 0 0 .5em;
+    display: block;
+    text-decoration: none;
+    color: #c58747;
+    padding-top: 4.5em
 }
 
 
 /*Search page*/
 
 section#matches {
-    background-color: #ffffff;
     padding: 1em;
-    margin: 0 auto;
+    margin: 4em auto 0 auto;
     max-width: 35em;
-
+    z-index: 10;
 }
 
 section#matches h3 {
@@ -198,7 +269,7 @@ section#matches img {
 
 section#interesses {
     background-color: #fff8f3;
-    padding: 1.5em 1.5em;
+    padding: 1.5em 1em;
     max-width: 35em;
     margin: 0 auto;
     border-radius: .75em;
@@ -206,14 +277,19 @@ section#interesses {
 
 section#interesses h3 {
     color: #ebbab5;
-    margin: .3em 0 1.3em 0;
+    margin: .3em 0 .0 0;
+}
+
+section#interesses p {
+    color: #ebbab5;
+    margin: 0 0 1.5em 0;
 }
 
 section#interesses article {
     background-color: #ffffff;
     border-radius: 1em;
     justify-content: center;
-    margin-bottom: 4em;
+    margin: 0 auto 4em auto;
 }
 
 section#interesses article img.interest {
@@ -227,7 +303,7 @@ section#interesses article img.interest {
 section#interesses article div {
     background-color: #ffffff;
     display: flex;
-    height: 3.5em;
+    height: 3em;
     justify-content: space-around;
     margin-top: 0;
     border-bottom-left-radius: .75em;
@@ -243,20 +319,18 @@ section#interesses article div img {
 section#interesses article div img[alt="like"] {
     width: 1.4em;
     height: 1.4em;
-
 }
 
 section#interesses div img[alt="dislike"] {
     width: 1.2em;
     height: 1.2em;
-
 }
 
 section#interesses article h4 {
     color: #ffffff;
     margin: -2.5em 0 1em .5em;
-
 }
+
 
 /* Notifications page */
 
@@ -267,17 +341,21 @@ section#notifications {
     max-width: 35em;
 }
 
+section#notifications a {
+    text-decoration: none;
+}
 
-section#notifications article {
+section#notifications a article {
     display: flex;
 }
 
-section#notifications article p {
+section#notifications a article p {
     margin: auto 0;
     color: #e1a799;
+    word-break: break-all;
 }
 
-section#notifications article img {
+section#notifications a article img {
     width: 7em;
     height: 7em;
     border-radius: 50%;
@@ -290,14 +368,26 @@ section#notifications article img {
 
 section#profile {
     text-align: center;
+    margin: 1em auto 2em auto;
+    max-width: 40em;
 }
 
-section#profile img {
+section#profile img[alt="gebruiker"] {
     width: 10em;
     height: 10em;
     border-radius: 50%;
     margin: 1em;
     padding: 0;
+}
+
+a#settings {
+    margin: -1.4em 1em auto auto;
+    float: right;
+}
+
+a img[alt="settings"] {
+    width: 2em;
+    height: 2em;
 }
 
 section#profile div {
@@ -324,13 +414,23 @@ section#your_interests {
 section#your_interests h3 {
     color: #ebbab5;
     margin: 0em 0 0em 0;
-    grid-column: 1/3;
+    grid-column: 1/2;
+}
+
+section#your_interests a#changeinterests {
+    grid-column: 2/3;
+    margin-right: 1em;
+}
+
+section#your_interests a img {
+    width: 1.5em;
+    float: right;
 }
 
 section#your_interests article {
     border-radius: 1em;
     justify-content: center;
-    margin-bottom: 4em;
+    margin-bottom: 1.5em;
 }
 
 section#your_interests article img:first-child {
@@ -340,26 +440,14 @@ section#your_interests article img:first-child {
     border-radius: .75em;
 }
 
-section#your_interests article div {
-    display: flex;
-    justify-content: center;
-}
-
-section#your_interests article div h4 {
+section#your_interests article h4 {
     color: #ffffff;
-    margin: -2.2em 0 0 .5em;
+    margin: -2.2em auto 0 .5em;
     padding: 0;
-    word-break:break-all;
+    word-break: break-all;
     line-height: 1em;
 }
 
-section#your_interests article div img {
-    width: 1.3em;
-    height: 1.3em;
-    margin: -2.5em .75em 0em auto;
-    padding: 0;
-
-}
 
 /* Settings page */
 
@@ -369,7 +457,7 @@ section#settings {
     padding: 0 1em 1em 1em;
 }
 
-section#settings form img {
+form img[alt="gebruiker"] {
     width: 10em;
     height: 10em;
     border-radius: 50%;
@@ -377,7 +465,7 @@ section#settings form img {
     padding: 0;
 }
 
-section#settings form fieldset {
+form fieldset {
     border: none;
     margin: 0 auto;
     padding: 0 1em;
@@ -386,11 +474,11 @@ section#settings form fieldset {
     max-width: 25em;
 }
 
-section#settings form fieldset label {
+form fieldset label {
     margin: 0.3em 0 0.3em;
 }
 
-section#settings form fieldset input {
+form fieldset input {
     padding: .7em .7em .7em 1em;
     width: 100%;
     border-radius: 2em;
@@ -399,8 +487,17 @@ section#settings form fieldset input {
     font-size: 90%;
 }
 
+form fieldset #gender {
+    display: inline-flex;
+    width: unset;
+}
 
-section#settings form fieldset [type=submit] {
+form fieldset #orientation {
+    display: inline-flex;
+    width: unset;
+}
+
+form fieldset [type=submit] {
     font-family: 'Avenir_Light';
     font-size: 1em;
     background-color: #c58747;
@@ -412,41 +509,126 @@ section#settings form fieldset [type=submit] {
     border: none;
 }
 
-
-
-
-
-
-/* Footer menu */
-
-footer {
-    box-shadow: 0 0 0.625em 0 rgba(0, 0, 0, .15);
-    padding: .7em 0em .7em 1em;
-    background-color: #ffffff;
-    margin: 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 2;
-}
-
-footer nav ul li a img {
-    max-height: 1.4em;
-    margin-right: 1.2em;
+section#settings a.button {
+    font-family: 'Avenir_Light';
+    font-size: 1em;
+    background-color: #ebbab5;
+    color: #ffffff;
+    padding: .7em 0;
+    border-radius: 2em;
+    margin: 0em auto;
+    width: 90%;
+    border: none;
+    max-width: 23.5em;
     display: block;
+    text-align: center;
 }
 
-footer nav ul li a img:hover {
-    opacity: .6;
-    transition: .2s linear;
+section#settings a {
+    text-decoration: none;
 }
 
-footer nav ul {
 
-    list-style: none;
-    padding: 0;
+/* Not found page */
+
+section#notfound {
+    background-color: #ebbab5;
+    color: #ffffff;
+    padding: 0 1em 1em 1em;
+    padding-bottom: 10em;
+}
+
+section#notfound article#notfound {
+    text-align: center;
+    flex-direction: column;
+    max-width: 25em;
+    margin: 0 auto;
+}
+
+section#notfound a {
+    text-decoration: none;
+}
+
+section#notfound button {
+    margin-top: 2em;
+}
+
+
+/*Create an account pages*/
+
+header nav ul li img[alt="back"] {
+    width: 1.5em;
+    height: auto;
     margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    padding: 0;
+}
+
+section#createaccount {
+    background-color: #fff8f3;
+    color: #ebbab5;
+    min-height: 50em;
+    padding: 5em 1em 2em 1em;
+    margin: 0;
+}
+
+form img[alt="interest"] {
+    width: 80%;
+    margin: 0 auto 3em auto;
+    border-radius: .75em;
+}
+
+
+/*Match user page*/
+
+section#user_interests {
+    background-color: #fff8f3;
+    padding: 1.5em 1em;
+    max-width: 40em;
+    margin: 0 auto;
+    border-radius: .75em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: .8em;
+}
+
+button#contactmatch {
+    border: none;
+}
+
+img#contactmatch {
+    width: 4.5em;
+    height: 4.5em;
+    padding: .2em;
+}
+
+section#user_interests h3 {
+    color: #ebbab5;
+    margin: 0em 0 0em 0;
+    grid-column: 1/3;
+}
+
+section#user_interests a img {
+    width: 1.5em;
+    float: right;
+}
+
+section#user_interests article {
+    border-radius: 1em;
+    justify-content: center;
+    margin-bottom: 1.5em;
+}
+
+section#user_interests article img:first-child {
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: .75em;
+}
+
+section#user_interests article h4 {
+    color: #ffffff;
+    margin: -2.2em auto 0 .5em;
+    padding: 0;
+    word-break: break-all;
+    line-height: 1em;
 }

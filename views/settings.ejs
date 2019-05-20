@@ -3,57 +3,30 @@
 <body>
 
     <!-- Menu bovenaan de pagina -->
-
-    <header>
-        <a href="profile.html"><img src="images/back.png" alt="back" title="back"></a>
-        <h2> Settings </h2>
-    </header>
-
+    <% include partials/header %>
 
     <section id="settings">
-        <form action="settings.html" method="get">
-            <fieldset>
-                <legend></legend>
+        <a href="profile" id="back">
+            < back</a> 
+            <form action="settings" method="get">
+                <fieldset>
+                    <legend></legend>
+                    <img src="images/girl_square.png" alt="gebruiker"><br />
+                    <label for="profilepicture">Change your profile picture:</label>
+                    <input type="file" id="profilepicture" name="profilepicture" accept="image/png, image/jpeg"><br />
+       
 
-                <img src="images/girl_square.png" alt="gebruiker"><br />
+        <% include partials/form %>
 
-                <label for="profilepicture">Change your profile picture:</label>
-                <input type="file" id="profilepicture" name="profilepicture" accept="image/png, image/jpeg"><br />
+       <input id="button" type="submit" name="submit" value="Save settings" />
 
-
-                <label for="name"> Voornaam</label>
-                <input id="name" type="text" placeholder=""><br />
-
-                <label for="dateofbirth"> Date of birth </label>
-                <input id="dateofbirth" type="date"><br />
-
-                <label for="location"> Place of residence </label>
-                <input id="location" type="text" placeholder=""><br />
-
-                <label for="gender" id="gender"> Gender </label>
-                <input id="gender" type="radio" name="gender" value="men" />Men
-                <input id="gender" type="radio" name="gender" value="women" checked="checked" />Woman<br />
-
-                <label for="orientation"> I'm looking for a </label>
-                <input type="checkbox" name="orientation" value="men" checked="checked" /> Men
-                <input type="checkbox" name="orientation" value="woman" /> Woman<br />
-
-                <label for="agefrom"> minimum age</label>
-                <input id="agefrom" type="text" placeholder="">
-                <label for="agetill"> maximum age</label>
-                <input id="agetill" type="text" placeholder=""><br />
-
-                <input id="button" type="submit" name="submit" value="Save settings" />
-
-
-
-            </fieldset>
-
-        </form>
+    </fieldset>
+ </form>
+        <a href="/" class="button">Log out</a>
     </section>
 
-
-
+    <script type="text/javascript" src="/server.js"></script>
+    <script type="text/javascript" src="script/script.js"></script>
 
 </body>
 

@@ -1,85 +1,94 @@
 <% include partials/head %>
 
-<body>
+    <body>
 
-    <!-- Menu bovenaan de pagina -->
+        <% include partials/header %>
 
-    <header>
-        <h2> Hi name, </h2>
-    </header>
+            <section id="matches">
+                <h3>Your matches</h3>
+                <a href="user1"><img src="images/boy_square.png" alt="gebruiker"></a>
+            </section>
 
-    <section id="matches">
-        <h3>Your matches</h3>
-        <img src="images/boy_square.png" alt="gebruiker">
-    </section>
+            <section id="interesses">
+                <h3> Interests</h3>
+                <p> We create matches with interests. Which interests does your dream match have? </p>
 
-    <section id="interesses">
-        <h3> Which interests does your dream match have?</h3>
+                <article>
+                    <img src="images/climbing.png" alt="interest climbing" class="interest">
+                    <h4>Climbing</h4>
+                    <div>
+                        <img src="images/heart.png" alt="like">
+                        <img src="images/cross.png" alt="dislike">
+                    </div>
+                </article>
 
-        <article> <img src="images/climbing.png" alt="interest climbing" class="interest">
-            <h4>Climbing</h4>
-            <div><img src="images/heart.png" alt="like">
-            <img src="images/cross.png" alt="dislike"></div>
-        </article>
+                <article>
+                    <img src="images/ski.png" alt="interest ski" class="interest">
+                    <h4>Ski</h4>
+                    <div>
+                        <img src="images/heart.png" alt="like" title="like">
+                        <img src="images/cross.png" alt="dislike" title="dislike">
+                    </div>
+                </article>
 
-        <article> <img src="images/ski.png" alt="interest ski" class="interest">
-            <h4>Ski</h4>
-            <div><img src="images/heart.png" alt="like" title="like">
-            <img src="images/cross.png" alt="dislike" title="dislike"></div>
-        </article>
-        <article> <img src="images/cooking.png" alt="interest cooking" class="interest">
-            <h4>Cooking</h4>
-            <div><img src="images/heart.png" alt="like" title="like">
-            <img src="images/cross.png" alt="dislike" title="dislike"></div>
-        </article>
+                <article>
+                    <img src="images/cooking.png" alt="interest cooking" class="interest">
+                    <h4>Cooking</h4>
+                    <div>
+                        <img src="images/heart.png" alt="like" title="like">
+                        <img src="images/cross.png" alt="dislike" title="dislike">
+                    </div>
+                </article>
 
-        <article> <img src="images/mounteverest.png" alt="mount everest" class="interest">
-            <h4>Climb Mount everest</h4>
-            <div><img src="images/heart.png" alt="like" title="like">
-            <img src="images/cross.png" alt="dislike" title="dislike"></div>
-        </article>
+                <article>
+                    <img src="images/mounteverest.png" alt="mount everest" class="interest">
+                    <h4>Climb Mount everest</h4>
+                    <div>
+                        <img src="images/heart.png" alt="like" title="like">
+                        <img src="images/cross.png" alt="dislike" title="dislike">
+                    </div>
+                </article>
 
-        <article> <img src="images/dog.png" alt="interest dogs" class="interest">
-            <h4>Dogs</h4>
-            <div><img src="images/heart.png" alt="like" title="like">
-            <img src="images/cross.png" alt="dislike" title="dislike"></div>
-        </article>
+                <article>
+                    <img src="images/dog.png" alt="interest dogs" class="interest">
+                    <h4>Dogs</h4>
+                    <div>
+                        <img src="images/heart.png" alt="like" title="like">
+                        <img src="images/cross.png" alt="dislike" title="dislike">
+                    </div>
+                </article>
 
-        <article> <img src="images/code.png" alt="interest code" class="interest">
-            <h4>Code</h4>
-            <div><img src="images/heart.png" alt="like" title="like">
-            <img src="images/cross.png" alt="dislike" title="dislike"></div>
-        </article>
+                <article>
+                    <img src="images/code.png" alt="interest code" class="interest">
+                    <h4>Code</h4>
+                    <div>
+                        <img src="images/heart.png" alt="like" title="like">
+                        <img src="images/cross.png" alt="dislike" title="dislike">
+                    </div>
+                </article>
 
-                <article> <img src="images/mtb.png" class="interest" alt="interest mountainbike" class="interest">
-            <h4>Mountainbike</h4>
-            <div><img src="images/heart.png" alt="like" title="like">
-            <img src="images/cross.png" alt="dislike" title="dislike"></div>
-        </article>
+                <article>
+                    <img src="images/mtb.png" class="interest" alt="interest mountainbike" class="interest">
+                    <h4>Mountainbike</h4>
+                    <div>
+                        <img src="images/heart.png" alt="like" title="like">
+                        <img src="images/cross.png" alt="dislike" title="dislike">
+                    </div>
+                </article>
 
-        <article> <img src="images/guitar.png" alt="interest guitar" class="interest">
-            <h4>Play guitar</h4>
-           <div> <img src="images/heart.png" alt="like" title="like">
-            <img src="images/cross.png" alt="dislike" title="dislike"></div>
-        </article>
+                <article>
+                    <img src="images/guitar.png" alt="interest guitar" class="interest">
+                    <h4>Play guitar</h4>
+                    <div>
+                        <img src="images/heart.png" alt="like" title="like">
+                        <img src="images/cross.png" alt="dislike" title="dislike">
+                    </div>
+                </article>
 
-    </section>
+            </section>
 
-    <footer>
-        <nav>
-            <ul>
-                <li>
-                    <a href="profile.html"> <img src="images/person.png" alt="profile" title="profile page"></a></li>
-                <li>
-                    <a href="search.html"> <img src="images/magnifier_orange.png" alt="search" title="search page"></a></li>
-                <li><a href="notifications.html"><img src="images/bell.png" alt="notifications" title="notifications page"></a></li>
-            </ul>
-        </nav>
-    </footer>
+            <script type="text/javascript" src="/server.js"></script>
+            <script type="text/javascript" src="script/script.js"></script>
+    </body>
 
-
-
-    <script type="text/javascript" src="script/script.js"></script>
-</body>
-
-</html>
+    </html>

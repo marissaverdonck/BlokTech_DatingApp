@@ -1,37 +1,28 @@
 <% include partials/head %>
 
-<body>
+    <body>
 
-    <!-- Menu bovenaan de pagina -->
+        <% include partials/header %>
 
-    <header>
-        <h2> Notifications </h2>
-    </header>
+            <a href="search" id="back">
+                < back</a>
 
-    <section id="notifications">
-        <article><img src="images/jeroenvierkant.jpg" alt="gebruiker jeroen">
-        <p>Name and you are a match</p></article>
+                    <section id="notifications">
+                        <a href="user1">
+                            <article><img src="images/jeroenvierkant.jpg" alt="gebruiker jeroen">
+                                <p>Name and you are a match</p>
+                            </article>
+                        </a>
+                        <a href="user1">
+                            <article><img src="images/jeroenvierkant.jpg" alt="gebruiker jeroen">
+                                <p>Name sends you a flirt</p>
+                            </article>
+                        </a>
+                    </section>
 
-         <article><img src="images/jeroenvierkant.jpg" alt="gebruiker jeroen">
-        <p>Name sends you a flirt</p></article>
-
-
-       </section>
-
-       <footer>
-        <nav>
-            <ul>
-                <li>
-                    <a href="profile.html"> <img src="images/person.png" alt="profile" title="profile page"></a></li>
-                <li>
-                    <a href="search.html"> <img src="images/magnifier.png" alt="search" title="search page"></a></li>
-                <li><a href="notifications.html"><img src="images/bell_orange.png" alt="notifications" title="notifications page"></a></li>
-            </ul>
-        </nav>
-    </footer>
-
-    <script type="text/javascript" src="script/script.js"></script>
+                    <script type="text/javascript" src="/server.js"></script>
+                    <script type="text/javascript" src="script/script.js"></script>
 
     </body>
 
-</html>
+    </html>
