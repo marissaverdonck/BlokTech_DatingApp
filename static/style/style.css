@@ -602,7 +602,7 @@ img#contactmatch {
 }
 
 section#user_interests h3 {
-    color: #ebbab5;
+    color: #ffffff;
     margin: 0em 0 0em 0;
     grid-column: 1/3;
 }
@@ -635,3 +635,108 @@ section#user_interests article h4 {
 
 
 /* Its a match! */
+
+body#itsamatch {
+    background-color: #ebbab5;
+}
+
+section#itsamatch h1 {
+    color: #ffffff;
+    background-color: #ebbab5;
+    text-align: center;
+    margin: 0;
+    padding-top: .5em;
+    font-size: 6em;
+}
+
+section#itsamatch img {
+    margin: 1em auto;
+    display: flex;
+    width: 15em;
+}
+
+section#match {
+    background-color: #ebbab5;
+    padding: 1.5em 1em;
+    max-width: 40em;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: .8em;
+}
+
+section#match h4 {
+    color: #ffffff;
+    margin: 0;
+    grid-column: 1/3;
+}
+
+section#macth a img {
+    width: 1.5em;
+    float: right;
+}
+
+section#match article {
+    border-radius: 1em;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+section#match article img:first-child {
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: .75em;
+}
+
+section#match article h4 {
+    color: #ffffff;
+    margin: -2.2em auto 0 .5em;
+    padding: 0;
+    word-break: break-all;
+    line-height: 1em;
+}
+
+section#names {
+    display: flex;
+    justify-content: center;
+    margin: 1.5em auto 2em auto;
+}
+
+section#names article {
+    text-align: center;
+}
+
+section#names img {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    margin: .5em;
+}
+
+section#names article p {
+    color: #ffffff;
+    margin: 0;
+}
+
+section#matchlaststep {
+    margin: 1em auto;
+    text-align: center;
+}
+
+section#matchlaststep button {
+    margin-bottom: 1.5em;
+}
+
+section#matchlaststep a {
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none
+}
+
+section#matchlaststep a:nth-child(2) {
+    color: #ffffff;
+    margin: 10em auto;
+    text-align: center;
+    text-decoration: underline;
+}

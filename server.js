@@ -55,8 +55,7 @@ app.get('/login', function(req, res) {
     res.render('Login')
 });
 app.get('/createaccount1', function(req, res) {
-    res.render('createaccount1', { data: data });
-    console.log(data)
+    res.render('createaccount1');
 });
 app.get('/createaccount2', function(req, res) {
     res.render('createaccount2')
@@ -76,10 +75,11 @@ app.get('/itsamatch', function(req, res) {
 
 
 //Handle a post request to /
-app.post('/createaccount1', add);
+app.post('/createaccount1', add1);
+app.post('/createaccount2', add2);
 
 
-function add(req, res) {
+function add1(req, res) {
     var id = slug(req.body.email).toLowerCase();
 
     data.push({
@@ -87,10 +87,25 @@ function add(req, res) {
         password: req.body.password
 
     })
-    console.log(data)
-    console.log(id)
-        //Redirects the browser to the given path
+    console.log(data);
+    console.log(id);
+    //Redirects the browser to the given path
     res.redirect('/createaccount2')
+}
+
+function add2(req, res) {
+    var id = slug(req.body.name).toLowerCase();
+
+    data.push({
+        name: req.body.name,
+        dateofbirth: req.body.dateofbirth,
+        location: req.body.location,
+
+    })
+    console.log(data);
+    console.log(id);
+    //Redirects the browser to the given path
+    res.redirect('/createaccount3')
 }
 
 
