@@ -1,20 +1,43 @@
 //http://localhost:3000
 
-const camelCase = require('camel-case')
-const express = require('express')
-const app = express()
-const port = 3000
+const camelCase = require('camel-case');
+const express = require('express');
+const app = express();
+const port = 3000;
+//makes a string (such as a title) URL safe.
+const slug = require('slug');
+//ontleed things as json, forms, etc.
+const bodyParser = require('body-parser');
 
-//Serve files from the static folder
+var data = [{
+        email: 'Marissa',
+        password: 27
+    },
+    {
+        email: 'Danny',
+        password: 21
+    }
+];
+
+
+//Serve files from the static folder (middleware function)
 app.use(express.static('static'));
+//urlencoded is what browsers use to send forms
+app.use(bodyParser.urlencoded({ extended: true }));
 //Use ejs for templating
 app.set('view engine', 'ejs');
 //Load templates from the 'views' folder
 app.set('views', 'views');
 
+
+// Gets all gebruikers TEST
+app.get('/gebruikers', function(req, res) {
+    res.render('gebruikers', { data: data })
+});
+
 // Announce the pages to the browser
 app.get('/', function(req, res) {
-    res.render('index')
+    res.render('index', { data: data })
 });
 app.get('/notifications', function(req, res) {
     res.render('notifications')
@@ -28,14 +51,12 @@ app.get('/search', function(req, res) {
 app.get('/settings', function(req, res) {
     res.render('settings')
 });
-app.get('/about', function(req, res) {
-    res.render('About')
-});
 app.get('/login', function(req, res) {
     res.render('Login')
 });
 app.get('/createaccount1', function(req, res) {
-    res.render('createaccount1')
+    res.render('createaccount1', { data: data });
+    console.log(data)
 });
 app.get('/createaccount2', function(req, res) {
     res.render('createaccount2')
@@ -52,23 +73,37 @@ app.get('/user1', function(req, res) {
 app.get('/itsamatch', function(req, res) {
     res.render('itsamatch')
 });
+
+
+//Handle a post request to /
+app.post('/createaccount1', add);
+
+
+function add(req, res) {
+    var id = slug(req.body.email).toLowerCase();
+
+    data.push({
+        email: req.body.email,
+        password: req.body.password
+
+    })
+    console.log(data)
+    console.log(id)
+        //Redirects the browser to the given path
+    res.redirect('/createaccount2')
+}
+
+
 // If no valid URL was found, send the "not-found page"
 app.use(function(req, res) {
-    res.status(404).render('not-found')
+    res.status(404).sendFile('not-found')
 });
-
 // Gives the portnumber
 app.listen(port, function() {
     console.log('The app listening on port ${port}!')
 });
 
-/* (voorbeeld)
-//Render by combining templates with data, send the result
-function movies(req, res) {
-  res.render('index', {data: data})
-}
-*/
-
 /* Bronnen:
 Be course - Lecture 2 - https://docs.google.com/presentation/d/1uT6CVMdNig-I9oSwEHI-QiadINH96HYyRC-BIIPxhSI/edit#slide=id.g4e3b0a72ee_0_36
+Be course - Lecture 3 - https://docs.google.com/presentation/d/137YTmMadaUNCJ2ksKHzU_NCZT-BIv3q9tGhXc38EZ3g/edit#slide=id.g4e3b0a74b9_1_861
 Express - https://expressjs.com/en/starter/static-files.html */

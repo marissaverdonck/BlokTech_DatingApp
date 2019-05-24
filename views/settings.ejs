@@ -1,33 +1,27 @@
 <% include partials/head %>
 
-<body>
+    <body>
+        <% include partials/header %>
 
-    <!-- Menu bovenaan de pagina -->
-    <% include partials/header %>
+            <section id="settings">
+                <a href="profile" id="back">
+                    < back</a>
+                        <form action="settings" method="get">
+                            <fieldset>
+                                <legend></legend>
+                                <img src="images/girl_square.png" alt="gebruiker"><br />
+                                <label for="profilepicture">Change your profile picture:</label>
+                                <input type="file" id="profilepicture" name="profilepicture" accept="image/png, image/jpeg"><br />
+                                <% include partials/form %>
+                                    <input id="button" type="submit" name="submit" value="Save settings" />
+                            </fieldset>
+                        </form>
+                        <a href="/" class="button">Log out</a>
+            </section>
 
-    <section id="settings">
-        <a href="profile" id="back">
-            < back</a> 
-            <form action="settings" method="get">
-                <fieldset>
-                    <legend></legend>
-                    <img src="images/girl_square.png" alt="gebruiker"><br />
-                    <label for="profilepicture">Change your profile picture:</label>
-                    <input type="file" id="profilepicture" name="profilepicture" accept="image/png, image/jpeg"><br />
-       
+            <script type="text/javascript" src="/server.js"></script>
+            <script type="text/javascript" src="script/script.js"></script>
 
-        <% include partials/form %>
+    </body>
 
-       <input id="button" type="submit" name="submit" value="Save settings" />
-
-    </fieldset>
- </form>
-        <a href="/" class="button">Log out</a>
-    </section>
-
-    <script type="text/javascript" src="/server.js"></script>
-    <script type="text/javascript" src="script/script.js"></script>
-
-</body>
-
-</html>
+    </html>
