@@ -501,11 +501,9 @@ section#notifications a article img {
 
 section#profile {
   text-align: center;
-  margin: 1em auto 1em auto;
+  margin: 1em auto 0em auto;
   max-width: 40em;
   background-color: #ffffff;
-  padding-bottom: 1em;
-  border-radius: .75em;
   padding: 0 1em 1em 1em;
 }
 
@@ -528,9 +526,7 @@ a img[alt="settings"] {
   height: 2em;
 }
 
-section#profile div {
-  margin-bottom: 1em;
-}
+section#profile div {}
 
 section#profile div p {
   padding: 0;
@@ -539,11 +535,10 @@ section#profile div p {
 }
 
 section#your_interests {
-  background-color: #fff8f3;
+  background-color: #ffffff;
   padding: 1.5em 1em;
   max-width: 40em;
   margin: 0 auto;
-  border-radius: .75em;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: .8em;
@@ -604,6 +599,10 @@ form img[alt="gebruiker"] {
   padding: 0;
 }
 
+form img {
+  box-shadow: -7px 10px 11px -4px rgba(0, 0, 0, 0.18);
+}
+
 form fieldset {
   border: none;
   margin: 0 auto;
@@ -624,6 +623,11 @@ form fieldset input {
   border: none;
   font-family: 'Avenir_Light';
   font-size: 90%;
+  box-shadow: -7px 10px 11px -4px rgba(0, 0, 0, 0.18);
+}
+
+form fieldset input[type=file] {
+  box-shadow: none;
 }
 
 form fieldset input:hover {
@@ -760,11 +764,10 @@ form img[alt="interest"] {
 /*Match user page*/
 
 section#user_interests {
-  background-color: #fff8f3;
+  background-color: #ffffff;
   padding: 1.5em 1em;
   max-width: 40em;
   margin: 0 auto;
-  border-radius: .75em;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: .8em;
@@ -772,6 +775,7 @@ section#user_interests {
 
 button#contactmatch {
   border: none;
+  background-color: #ffffff;
 }
 
 img#contactmatch {
