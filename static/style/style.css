@@ -324,7 +324,7 @@ section#matches.show {
   background-color: #fff8f3;
 }
 
-section#matches.hidden {
+section#matches.hide {
   opacity: 0;
   margin-top: -5em;
 }
