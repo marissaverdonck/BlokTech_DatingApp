@@ -6,13 +6,13 @@ You can find my research in the [Wiki](https://github.com/marissaverdonck/BlokTe
 
 ## Installation
 1. Open up your terminal
-2. Go to the map you want to install the application
+2. Go to the file you want to install the application in
 3. Type
 `Git clone https://github.com/marissaverdonck/BlokTech_DatingApp.git`
-
-`npm install InterMatching`
-
-## Usage
+4. Install the dependecies
+`npm install`
+5. To get the application up and running
+`npm run start`
 
 ## License
 MIT license 
