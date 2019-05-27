@@ -9,13 +9,13 @@ You can find my research in the [Wiki](https://github.com/marissaverdonck/BlokTe
 
 2. Go to the file you want to install the application in
 
-3. Type
+3. Type. 
 `Git clone https://github.com/marissaverdonck/BlokTech_DatingApp.git`
 
-4. Install the dependecies
+4. Install the dependecies. 
 `npm install`
 
-5. To get the application up and running
+5. To get the application up and running. 
 `npm run start`
 
 ## License
