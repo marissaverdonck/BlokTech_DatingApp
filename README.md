@@ -8,7 +8,8 @@ You can find my research in the [Wiki](https://github.com/marissaverdonck/BlokTe
 1. Open up your terminal
 2. Go to the map you want to install the application
 3. Type
-Git clone https://github.com/marissaverdonck/BlokTech_DatingApp.git
+`Git clone https://github.com/marissaverdonck/BlokTech_DatingApp.git`
+
 `npm install InterMatching`
 
 ## Usage
