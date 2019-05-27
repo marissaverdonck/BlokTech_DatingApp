@@ -15,10 +15,14 @@ Git clone https://github.com/marissaverdonck/BlokTech_DatingApp.git
 ```
 
 4. Install the dependecies<br/>
-`npm install`
+```
+npm install
+```
 
 5. To get the application up and running<br/>
-`npm run start`
+```
+npm run start
+```
 
 ## License
 MIT license 
