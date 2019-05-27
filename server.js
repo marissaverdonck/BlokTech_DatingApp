@@ -10,13 +10,13 @@ const slug = require('slug');
 const bodyParser = require('body-parser');
 
 var data = [{
-        email: 'Marissa',
-        password: 27
-    },
-    {
-        email: 'Danny',
-        password: 21
-    }
+    email: 'Marissa',
+    password: 27
+  },
+  {
+    email: 'Danny',
+    password: 21
+  }
 ];
 
 
@@ -32,45 +32,45 @@ app.set('views', 'views');
 
 // Gets all gebruikers TEST
 app.get('/gebruikers', function(req, res) {
-    res.render('gebruikers', { data: data })
+  res.render('gebruikers', { data: data })
 });
 
 // Announce the pages to the browser
 app.get('/', function(req, res) {
-    res.render('index', { data: data })
+  res.render('index')
 });
 app.get('/notifications', function(req, res) {
-    res.render('notifications')
+  res.render('notifications')
 });
 app.get('/profile', function(req, res) {
-    res.render('profile')
+  res.render('profile')
 });
 app.get('/search', function(req, res) {
-    res.render('search')
+  res.render('search')
 });
 app.get('/settings', function(req, res) {
-    res.render('settings')
+  res.render('settings')
 });
 app.get('/login', function(req, res) {
-    res.render('Login')
+  res.render('Login')
 });
 app.get('/createaccount1', function(req, res) {
-    res.render('createaccount1');
+  res.render('createaccount1');
 });
 app.get('/createaccount2', function(req, res) {
-    res.render('createaccount2')
+  res.render('createaccount2')
 });
 app.get('/createaccount3', function(req, res) {
-    res.render('createaccount3')
+  res.render('createaccount3')
 });
 app.get('/changeinterests', function(req, res) {
-    res.render('changeinterests')
+  res.render('changeinterests')
 });
 app.get('/user1', function(req, res) {
-    res.render('user1')
+  res.render('user1')
 });
 app.get('/itsamatch', function(req, res) {
-    res.render('itsamatch')
+  res.render('itsamatch')
 });
 
 
@@ -80,42 +80,40 @@ app.post('/createaccount2', add2);
 
 
 function add1(req, res) {
-    var id = slug(req.body.email).toLowerCase();
+  var id = slug(req.body.email).toLowerCase();
 
-    data.push({
-        email: req.body.email,
-        password: req.body.password
+  data.push({
+    email: req.body.email,
+    password: req.body.password
 
-    })
-    console.log(data);
-    console.log(id);
-    //Redirects the browser to the given path
-    res.redirect('/createaccount2')
+  })
+  console.log(data);
+  console.log(id);
+  //Redirects the browser to the given path
+  res.redirect('/createaccount2')
 }
 
 function add2(req, res) {
-    var id = slug(req.body.name).toLowerCase();
+  var id = slug(req.body.name).toLowerCase();
 
-    data.push({
-        name: req.body.name,
-        dateofbirth: req.body.dateofbirth,
-        location: req.body.location,
+  data.push({
+    name: req.body.name,
+    dateofbirth: req.body.dateofbirth,
+    location: req.body.location,
 
-    })
-    console.log(data);
-    console.log(id);
-    //Redirects the browser to the given path
-    res.redirect('/createaccount3')
+  })
+  console.log(data);
+  console.log(id);
+  //Redirects the browser to the given path
+  res.redirect('/createaccount3')
 }
-
-
 // If no valid URL was found, send the "not-found page"
 app.use(function(req, res) {
-    res.status(404).sendFile('not-found')
+  res.status(404).render('not-found')
 });
 // Gives the portnumber
 app.listen(port, function() {
-    console.log('The app listening on port ${port}!')
+  console.log('The app listening on port ${port}!')
 });
 
 /* Bronnen:
