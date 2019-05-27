@@ -25,4 +25,4 @@ npm run start
 ```
 
 ## License
-MIT license 
+[MIT License](https://github.com/marissaverdonck/BlokTech_DatingApp/blob/master/license)
