@@ -6,3 +6,4 @@ package-lock.json
 /static/upload/*
 !*.gitkeep
 */.DS_Store
+**/.DS_Store
