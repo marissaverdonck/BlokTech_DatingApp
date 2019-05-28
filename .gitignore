@@ -7,3 +7,4 @@ package-lock.json
 !*.gitkeep
 */.DS_Store
 **/.DS_Store
+.env

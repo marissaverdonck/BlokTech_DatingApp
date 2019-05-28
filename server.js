@@ -10,14 +10,20 @@ const slug = require('slug');
 const bodyParser = require('body-parser');
 //uploading files in forms
 const multer = require('multer');
+var find = require('array-find')
+
 
 var data = [{
+    id: 'marissa',
     email: 'Marissa',
-    password: 27
+    password: 27,
+
   },
   {
+    id: 'danny',
     email: 'Danny',
-    password: 21
+    password: 21,
+
   }
 ];
 
@@ -34,10 +40,11 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 
-// Gets all gebruikers TEST
-app.get('/gebruikers', function(req, res) {
-  res.render('gebruikers', { data: data })
+// Gets data from data array 
+app.get('/list', function(req, res) {
+  res.render('list', { data: data })
 });
+
 
 // Announce the pages to the browser
 app.get('/', function(req, res) {
@@ -76,21 +83,46 @@ app.get('/user1', function(req, res) {
 app.get('/itsamatch', function(req, res) {
   res.render('itsamatch')
 });
+// ga naar profielpagina
+app.get('/:id', user);
+
+app.delete('/:id', remove);
 
 
 //Handle a post request to /
 app.post('/createaccount1', add1);
 app.post('/createaccount2', upload.single('profilepicture'), add2)
 
+// Haal de gegevens uit de data van /:id en open het in de pagina (profile)
+function user(req, res, next) {
+  var id = req.params.id
+  var details = find(data, function(value) {
+    return value.id === id
+  })
+  if (!details) {
+    next()
+    return
+  }
+  res.render('profile', { data: details })
+}
+
+// delete data
+function remove(req, res) {
+  var id = req.params.id
+  data = data.filter(function(value) {
+    return value.id !== id
+  })
+  res.json({ status: 'ok' })
+}
 
 
 function add1(req, res) {
   var id = slug(req.body.email).toLowerCase();
 
   data.push({
+    id: id,
     email: req.body.email,
     password: req.body.password
-
   })
   console.log(data);
   console.log(id);
@@ -102,6 +134,7 @@ function add2(req, res) {
   var id = slug(req.body.name).toLowerCase();
 
   data.push({
+    id: id,
     name: req.body.name,
     dateofbirth: req.body.dateofbirth,
     location: req.body.location,
