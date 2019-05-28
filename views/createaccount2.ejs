@@ -15,7 +15,7 @@
     </header>
 
     <section id="createaccount">
-      <form method="post">
+      <form method="post" enctype="multipart/form-data">
         <% include partials/form %>
           <label for="profilepicture">Choose a profile picture</label>
           <input type="file" id="profilepicture" name="profilepicture" accept="image/png, image/jpeg" required><br />

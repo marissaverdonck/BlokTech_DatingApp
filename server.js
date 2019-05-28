@@ -8,6 +8,8 @@ const port = 3000;
 const slug = require('slug');
 //ontleed things as json, forms, etc.
 const bodyParser = require('body-parser');
+//uploading files in forms
+const multer = require('multer');
 
 var data = [{
     email: 'Marissa',
@@ -19,6 +21,8 @@ var data = [{
   }
 ];
 
+//folder dor uploaded files
+var upload = multer({ dest: 'static/upload/' })
 
 //Serve files from the static folder (middleware function)
 app.use(express.static('static'));
@@ -76,7 +80,8 @@ app.get('/itsamatch', function(req, res) {
 
 //Handle a post request to /
 app.post('/createaccount1', add1);
-app.post('/createaccount2', add2);
+app.post('/createaccount2', upload.single('profilepicture'), add2)
+
 
 
 function add1(req, res) {
@@ -100,7 +105,11 @@ function add2(req, res) {
     name: req.body.name,
     dateofbirth: req.body.dateofbirth,
     location: req.body.location,
-
+    gender: req.body.gender,
+    orientation: req.body.orientation,
+    agefrom: req.body.agefrom,
+    agetill: req.body.agetill,
+    profilepicture: req.file ? req.file.filename : null,
   })
   console.log(data);
   console.log(id);
@@ -117,6 +126,7 @@ app.listen(port, function() {
 });
 
 /* Bronnen:
-Be course - Lecture 2 - https://docs.google.com/presentation/d/1uT6CVMdNig-I9oSwEHI-QiadINH96HYyRC-BIIPxhSI/edit#slide=id.g4e3b0a72ee_0_36
-Be course - Lecture 3 - https://docs.google.com/presentation/d/137YTmMadaUNCJ2ksKHzU_NCZT-BIv3q9tGhXc38EZ3g/edit#slide=id.g4e3b0a74b9_1_861
-Express - https://expressjs.com/en/starter/static-files.html */
+dandevri, 2019- Express-server - https://github.com/cmda-bt/be-course-18-19/blob/master/examples/express-server/index.js
+CMD Be course, 2019- Lecture 2 - https://docs.google.com/presentation/d/1uT6CVMdNig-I9oSwEHI-QiadINH96HYyRC-BIIPxhSI/edit#slide=id.g4e3b0a72ee_0_36
+CMD Be course, 2019 - Lecture 3 - https://docs.google.com/presentation/d/137YTmMadaUNCJ2ksKHzU_NCZT-BIv3q9tGhXc38EZ3g/edit#slide=id.g4e3b0a74b9_1_861
+*/

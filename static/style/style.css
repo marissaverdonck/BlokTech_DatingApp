@@ -144,7 +144,7 @@ section#login form fieldset input {
   border: none;
   font-family: 'Avenir_Light';
   font-size: 90%;
-  box-shadow: -7px 10px 11px -4px rgba(0, 0, 0, 0.18);
+  box-shadow: 1px 5px 11px -4px rgba(0, 0, 0, 0.18);
 }
 
 section#login form fieldset input:hover {
@@ -623,7 +623,7 @@ form fieldset input {
   border: none;
   font-family: 'Avenir_Light';
   font-size: 90%;
-  box-shadow: -7px 10px 11px -4px rgba(0, 0, 0, 0.18);
+  box-shadow: 1px 5px 11px -4px rgba(0, 0, 0, 0.18);
 }
 
 form fieldset input[type=file] {
