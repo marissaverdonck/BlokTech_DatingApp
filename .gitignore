@@ -6,4 +6,3 @@ package-lock.json
 /static/upload/*
 !*.gitkeep
 */.DS_Store
-find . -name .DS_Store -print0 | xargs -0 git rm --ignore-unmatch
