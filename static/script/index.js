@@ -23,7 +23,7 @@ function onload() {
 
   window.location = '/'
 }
-}
+
 
 /* Bron: https://docs.google.com/presentation/d/137YTmMadaUNCJ2ksKHzU_NCZT-BIv3q9tGhXc38EZ3g/edit#slide=id.g4e3b0a74b9_1_1260
  */
