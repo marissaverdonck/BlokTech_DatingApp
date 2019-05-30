@@ -79,8 +79,8 @@ app.get('/list', allusers);
 app.post('/createaccount1', form1);
 app.post('/createaccount2', upload.single('profilepicture'), form2)
   // Go to the profilepage
-app.get('/:id', finduser);
-app.delete('/:id', removeuser);
+app.get('/profile' + ':id', finduser);
+app.delete('/profile' + ':id', removeuser);
 // If no valid URL was found, send the "not-found page"
 app.use(function(req, res) {
   res.status(404).render('not-found')
@@ -98,7 +98,7 @@ function allusers(req, res) {
   }
 }
 
-// Haal de gegevens uit de data van /:id en open het in de pagina (profile)
+// Haal de gegevens uit de data van :id en open het in de pagina (profile)
 function finduser(req, res, next) {
   var id = req.params.id
   db.collection('data').findOne({
@@ -134,19 +134,22 @@ function form1(req, res) {
 }
 
 function form2(req, res) {
-  var id = slug(req.body.name).toLowerCase();
-
-  db.collection('data').insertOne({
-    id: id,
-    name: req.body.name,
-    dateofbirth: req.body.dateofbirth,
-    location: req.body.location,
-    gender: req.body.gender,
-    orientation: req.body.orientation,
-    agefrom: req.body.agefrom,
-    agetill: req.body.agetill,
-    profilepicture: req.file ? req.file.filename : null,
-  }, done)
+  var id = "5cf028122515af1ab240b198"
+  db.collection('data').update({
+      _id: new mongo.ObjectID(id)
+    }, {
+      $set: {
+        name: req.body.name,
+        dateofbirth: req.body.dateofbirth,
+        location: req.body.location,
+        gender: req.body.gender,
+        orientation: req.body.orientation,
+        agefrom: req.body.agefrom,
+        agetill: req.body.agetill,
+        profilepicture: req.file ? req.file.filename : null,
+      },
+    },
+    done)
 
   function done(err, data) {
     if (err) {
