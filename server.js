@@ -12,17 +12,20 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 var find = require('array-find')
 var mongo = require('mongodb')
+
 require('dotenv').config()
-  //Folder dor uploaded files
-var upload = multer({ dest: 'static/upload/' })
-  // Mongodb
-var db = null
-var url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT
+
+// Mongodb
+var db = null;
+var url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT;
 mongo.MongoClient.connect(url, function(err, client) {
   if (err)
     throw err
   db = client.db(process.env.DB_NAME)
-})
+});
+
+//Folder for uploaded files
+var upload = multer({ dest: 'static/upload/' });
 
 //Serve files from the static folder (middleware function)
 app.use(express.static('static'));
@@ -33,20 +36,7 @@ app.set('view engine', 'ejs');
 //Load templates from the 'views' folder
 app.set('views', 'views');
 
-// Gets data from data array 
-app.get('/list', function movies(req, res) {
-  db.collection('data').find().toArray(done)
-
-  function done(err, data) {
-    if (err) {
-      next(err)
-    } else {
-      res.render('list.ejs', { data: data })
-    }
-  }
-});
-
-// Announce the pages to the browser
+// Announce the pages to the browser and render it
 app.get('/', function(req, res) {
   res.render('index')
 });
@@ -83,25 +73,33 @@ app.get('/user1', function(req, res) {
 app.get('/itsamatch', function(req, res) {
   res.render('itsamatch')
 });
-
-
-
-
-
-//Handle a post request to /
-app.post('/createaccount1', add1);
-app.post('/createaccount2', upload.single('profilepicture'), add2)
-  // Gives the portnumber
+// Open page and get all data from data array  
+app.get('/list', allusers);
+//Handle a post request
+app.post('/createaccount1', form1);
+app.post('/createaccount2', upload.single('profilepicture'), form2)
+  // Go to the profilepage
+app.get('/:id', finduser);
+app.delete('/:id', removeuser);
+// If no valid URL was found, send the "not-found page"
 app.use(function(req, res) {
   res.status(404).render('not-found')
 });
-// ga naar profielpagina
-app.get('/:id', user);
-app.delete('/:id', remove);
 
+function allusers(req, res) {
+  db.collection('data').find().toArray(done)
+
+  function done(err, data) {
+    if (err) {
+      next(err)
+    } else {
+      res.render('list.ejs', { data: data })
+    }
+  }
+}
 
 // Haal de gegevens uit de data van /:id en open het in de pagina (profile)
-function user(req, res, next) {
+function finduser(req, res, next) {
   var id = req.params.id
   db.collection('data').findOne({
     _id: new mongo.ObjectID(id)
@@ -111,12 +109,12 @@ function user(req, res, next) {
     if (err) {
       next(err)
     } else {
-      res.render('profile', { data: details })
+      res.render('profile', { data: data })
     }
   }
 }
 
-function add1(req, res) {
+function form1(req, res) {
   var id = slug(req.body.email).toLowerCase();
 
   db.collection('data').insertOne({
@@ -135,7 +133,7 @@ function add1(req, res) {
   }
 }
 
-function add2(req, res) {
+function form2(req, res) {
   var id = slug(req.body.name).toLowerCase();
 
   db.collection('data').insertOne({
@@ -161,7 +159,7 @@ function add2(req, res) {
 }
 
 // delete data
-function remove(req, res) {
+function removeuser(req, res) {
   var id = req.params.id
   db.collection('data').deleteOne({
     _id: new mongo.ObjectID(id)
@@ -176,8 +174,8 @@ function remove(req, res) {
   }
 }
 
-// If no valid URL was found, send the "not-found page"
 
+// Gives the portnumber
 app.listen(port, function() {
   console.log('The app listening on port ${port}!')
 });
