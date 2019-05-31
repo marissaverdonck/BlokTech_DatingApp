@@ -58,7 +58,7 @@ app.get('/login', function(req, res) {
 app.get('/createaccount1', function(req, res) {
   res.render('createaccount1');
 });
-app.get('/createaccount2', function(req, res) {
+app.get('/createaccount2' + ':id', function(req, res) {
   res.render('createaccount2')
 });
 app.get('/createaccount3', function(req, res) {
@@ -77,7 +77,7 @@ app.get('/itsamatch', function(req, res) {
 app.get('/list', allusers);
 //Handle a post request
 app.post('/createaccount1', form1);
-app.post('/createaccount2', upload.single('profilepicture'), form2)
+app.post('/createaccount2' + ":id", upload.single('profilepicture'), form2)
   // Go to the profilepage
 app.get('/profile' + ':id', finduser);
 app.delete('/profile' + ':id', removeuser);
@@ -116,7 +116,6 @@ function finduser(req, res, next) {
 
 function form1(req, res) {
   var id = slug(req.body.email).toLowerCase();
-
   db.collection('data').insertOne({
     id: id,
     email: req.body.email,
@@ -128,13 +127,15 @@ function form1(req, res) {
       next(err)
     } else {
       //Redirects the browser to the given path
-      res.redirect('/createaccount2')
+      res.redirect('/createaccount2' + data.insertedId)
+      console.log(data.insertedId)
+
     }
   }
 }
 
 function form2(req, res) {
-  var id = "5cf028122515af1ab240b198"
+  var id = req.params.id
   db.collection('data').update({
       _id: new mongo.ObjectID(id)
     }, {
@@ -157,6 +158,7 @@ function form2(req, res) {
     } else {
       //Redirects the browser to the given path
       res.redirect('/createaccount3')
+      console.log("test")
     }
   }
 }
