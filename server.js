@@ -61,7 +61,7 @@ app.get('/createaccount1', function(req, res) {
 app.get('/createaccount2' + ':id', function(req, res) {
   res.render('createaccount2')
 });
-app.get('/createaccount3', function(req, res) {
+app.get('/createaccount3' + ':id', function(req, res) {
   res.render('createaccount3')
 });
 app.get('/changeinterests', function(req, res) {
@@ -78,7 +78,9 @@ app.get('/list', allusers);
 //Handle a post request
 app.post('/createaccount1', form1);
 app.post('/createaccount2' + ":id", upload.single('profilepicture'), form2)
-  // Go to the profilepage
+app.post('/createaccount3' + ":id", upload.single('profilepicture'), form3)
+
+// Go to the profilepage
 app.get('/profile' + ':id', finduser);
 app.delete('/profile' + ':id', removeuser);
 // If no valid URL was found, send the "not-found page"
@@ -157,7 +159,40 @@ function form2(req, res) {
       next(err)
     } else {
       //Redirects the browser to the given path
-      res.redirect('/createaccount3')
+      res.redirect('/createaccount3' + id)
+      console.log("test")
+    }
+  }
+}
+
+function form3(req, res) {
+  var id = req.params.id
+  db.collection('data').update({
+      _id: new mongo.ObjectID(id)
+    }, {
+      $set: {
+        interest1: req.body.interest1,
+        picture1: req.file ? req.file.filename : null,
+        interest2: req.body.interest1,
+        picture2: req.file ? req.file.filename : null,
+        interest3: req.body.interest1,
+        picture3: req.file ? req.file.filename : null,
+        interest4: req.body.interest1,
+        picture4: req.file ? req.file.filename : null,
+        interest5: req.body.interest1,
+        picture5: req.file ? req.file.filename : null,
+        interest6: req.body.interest1,
+        picture6: req.file ? req.file.filename : null,
+      },
+    },
+    done)
+
+  function done(err, data) {
+    if (err) {
+      next(err)
+    } else {
+      //Redirects the browser to the given path
+      res.redirect('/search')
       console.log("test")
     }
   }
