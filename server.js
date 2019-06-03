@@ -78,7 +78,7 @@ app.get('/list', allusers);
 //Handle a post request
 app.post('/createaccount1', form1);
 app.post('/createaccount2' + ":id", upload.single('profilepicture'), form2)
-app.post('/createaccount3' + ":id", upload.single('profilepicture'), form3)
+app.post('/createaccount3' + ":id", upload.any(), form3)
 
 // Go to the profilepage
 app.get('/profile' + ':id', finduser);
@@ -172,17 +172,12 @@ function form3(req, res) {
     }, {
       $set: {
         interest1: req.body.interest1,
-        picture1: req.file ? req.file.filename : null,
         interest2: req.body.interest2,
-        picture2: req.file ? req.file.filename : null,
         interest3: req.body.interest3,
-        picture3: req.file ? req.file.filename : null,
         interest4: req.body.interest4,
-        picture4: req.file ? req.file.filename : null,
         interest5: req.body.interest5,
-        picture5: req.file ? req.file.filename : null,
         interest6: req.body.interest6,
-        picture6: req.file ? req.file.filename : null,
+        pictures: req.files,
       },
     },
     done)
