@@ -24,5 +24,15 @@ npm install
 npm run start
 ```
 
+## Usage
+Start Nodemon in your terminal
+```
+nodemon server.js
+```
+Start Mongodb in a new terminal
+```
+mongod
+```
+
 ## License
 [MIT License](https://github.com/marissaverdonck/BlokTech_DatingApp/blob/master/license)
