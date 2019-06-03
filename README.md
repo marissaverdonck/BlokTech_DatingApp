@@ -29,7 +29,7 @@ Start Nodemon in your terminal
 ```
 nodemon server.js
 ```
-Start Mongodb in a new terminal
+Start Mongodb in a new terminaltab
 ```
 mongod
 ```
