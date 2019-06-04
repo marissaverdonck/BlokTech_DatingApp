@@ -10,10 +10,10 @@ const slug = require('slug');
 const bodyParser = require('body-parser');
 //Uploading files in forms
 const multer = require('multer');
-var find = require('array-find')
-var mongo = require('mongodb')
-
-require('dotenv').config()
+const find = require('array-find')
+const mongo = require('mongodb')
+const session = require('express-session');
+require('dotenv').config();
 
 // Mongodb
 var db = null;
@@ -27,51 +27,95 @@ mongo.MongoClient.connect(url, function(err, client) {
 //Folder for uploaded files
 var upload = multer({ dest: 'static/upload/' });
 
+
+
 //Serve files from the static folder (middleware function)
 app.use(express.static('static'));
 //urlencoded is what browsers use to send forms
 app.use(bodyParser.urlencoded({ extended: true }));
-//Use ejs for templating
+// Sessions
+app.use(session({
+    resave: false,
+    saveUninitialized: true,
+    secret: process.env.SESSION_SECRET
+  }))
+  //Use ejs for templating
 app.set('view engine', 'ejs');
 //Load templates from the 'views' folder
 app.set('views', 'views');
 
 // Announce the pages to the browser and render it
-app.get('/', function(req, res) {
-  res.render('index')
+app.get('/', function welcome(req, res) {
+  db.collection('data').find().toArray(done);
+
+  function done(err, data) {
+    if (err) {
+      next(err)
+    } else {
+      res.render('index', { data: data, user: req.session.user });
+      console.log("session:" + req.session.user);
+    }
+  }
 });
+
 app.get('/notifications', function(req, res) {
-  res.render('notifications')
+  res.render('notifications', )
 });
 app.get('/profile', function(req, res) {
-  res.render('profile')
+  db.collection('data').find().toArray(done);
+
+  function done(err, data) {
+    if (err) {
+      next(err)
+    } else {
+      console.log('hallo user:' + req.session.user)
+      res.render('profile', { data: data, user: req.session.user })
+    }
+  }
+
 });
 app.get('/search', function(req, res) {
-  res.render('search')
+  db.collection('data').find().toArray(done);
+
+  function done(err, data) {
+    if (err) {
+      next(err)
+    } else {
+      console.log('hallo user:' + req.session.user)
+      res.render('search', { data: data, user: req.session.user });
+    }
+  }
 });
 app.get('/settings', function(req, res) {
-  res.render('settings')
-});
-app.get('/login', function(req, res) {
-  res.render('Login')
+  db.collection('data').find().toArray(done);
+
+  function done(err, data) {
+    if (err) {
+      next(err)
+    } else {
+      console.log('hallo user:' + req.session.user)
+      res.render('settings', { data: data, user: req.session.user })
+    }
+  }
+
 });
 app.get('/createaccount1', function(req, res) {
-  res.render('createaccount1');
+  res.render('createaccount1', );
 });
 app.get('/createaccount2' + ':id', function(req, res) {
-  res.render('createaccount2')
+  res.render('createaccount2', )
 });
 app.get('/createaccount3' + ':id', function(req, res) {
-  res.render('createaccount3')
+  res.render('createaccount3', )
 });
 app.get('/changeinterests', function(req, res) {
-  res.render('changeinterests')
+  res.render('changeinterests', )
 });
 app.get('/user1', function(req, res) {
-  res.render('user1')
+  res.render('user1', )
 });
 app.get('/itsamatch', function(req, res) {
-  res.render('itsamatch')
+  res.render('itsamatch', )
 });
 // Open page and get all data from data array  
 app.get('/list', allusers);
@@ -79,15 +123,32 @@ app.get('/list', allusers);
 app.post('/createaccount1', form1);
 app.post('/createaccount2' + ":id", upload.single('profilepicture'), form2)
 app.post('/createaccount3' + ":id", upload.any(), form3)
-
-// Go to the profilepage
+app.post('/', checkLogin)
+  // Go to the profilepage
 app.get('/profile' + ':id', finduser);
 app.delete('/profile' + ':id', removeuser);
-// If no valid URL was found, send the "not-found page"
-app.use(function(req, res) {
-  res.status(404).render('not-found')
-});
 
+
+function checkLogin(req, res) {
+  var email = req.body.email;
+  var password = req.body.password;
+  db.collection('data').findOne({
+    email: email
+  }, done);
+
+  function done(err, data) {
+    if (password === data.password) {
+      req.session.user = data;
+      res.redirect('search');
+      console.log('password correct, user:' + req.session.user)
+    } else {
+      res.redirect('/');
+      console.log('password incorrect');
+
+    }
+  }
+}
+// Maak een lijst van alle gebruikers
 function allusers(req, res) {
   db.collection('data').find().toArray(done)
 
@@ -95,7 +156,7 @@ function allusers(req, res) {
     if (err) {
       next(err)
     } else {
-      res.render('list.ejs', { data: data })
+      res.render('list.ejs', { data: data, })
     }
   }
 }
@@ -209,7 +270,10 @@ function removeuser(req, res) {
   }
 }
 
-
+/*// If no valid URL was found, send the "not-found page"
+app.use(function(req, res) {
+  res.status(404).render('not-found')
+});*/
 // Gives the portnumber
 app.listen(port, function() {
   console.log('The app listening on port ${port}!')

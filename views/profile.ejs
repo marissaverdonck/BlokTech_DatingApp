@@ -12,13 +12,18 @@
             <a href="settings" id="settings">
               <Img src="images/settings_pink.png" alt="settings">
             </a>
-            <img src="images/girl_square.png" alt="gebruiker">
-            <div>
-              <p>
-                <%= (data.email) %>, 27
-              </p>
-              <p>Amsterdam</p>
-            </div>
+            <% if (user) { %>
+              <Img src="upload/<%= user.profilepicture %>" alt="gebruiker">
+              <div>
+                <p>
+                  <%= user.name %>,
+                    <%= user.dateofbirth %>
+                </p>
+                <p>
+                  <%= user.location %>
+                </p>
+
+              </div>
       </section>
 
       <section id="your_interests">
@@ -26,38 +31,49 @@
         <a href="changeinterests" id="changeinterests"><img src="images/pen.png" alt="change" title="change interest"></a>
 
         <article>
-          <img src="images/climbing.png" alt="interest climbing" class="interest">
-          <h4>Climbing</h4>
+          <img src="upload/<%= user.pictures[0].filename %>" alt="interest climbing " class="interest ">
+          <h4>
+            <%= user.interest1%>"</h4>
         </article>
 
         <article>
-          <img src="images/ski.png" alt="interest ski" class="interest">
-          <h4>Ski</h4>
+          <img src="upload/<%= user.pictures[1].filename %>" alt="interest ski " class="interest ">
+          <h4>
+            <%= user.interest2%>
+          </h4>
         </article>
 
         <article>
-          <img src="images/cooking.png" alt="interest cooking" class="interest">
-          <h4>Cooking</h4>
+          <img src="upload/<%= user.pictures[2].filename %>" alt="interest cooking " class="interest ">
+          <h4>
+            <%= user.interest3%>
+          </h4>
         </article>
 
         <article>
-          <img src="images/mounteverest.png" alt="mount everest" class="interest">
-          <h4>Climb Mount everest</h4>
+          <img src="upload/<%= user.pictures[3].filename %>" alt="mount everest " class="interest ">
+          <h4>
+            <%= user.interest4%>
+          </h4>
         </article>
 
         <article>
-          <img src="images/dog.png" alt="interest dogs" class="interest">
-          <h4>Dogs</h4>
+          <img src="upload/<%= user.pictures[4].filename %>" alt="interest dogs " class="interest ">
+          <h4>
+            <%= user.interest5%>
+          </h4>
         </article>
 
         <article>
-          <img src="images/code.png" alt="interest code" class="interest">
-          <h4>Code</h4>
+          <img src="upload/<%= user.pictures[5].filename %>" alt="interest code " class="interest ">
+          <h4>
+            <%= user.interest6%>
+          </h4>
         </article>
       </section>
-
-      <script type="text/javascript" src="/server.js"></script>
-      <script type="text/javascript" src="script/script.js"></script>
+      <% } %>
+        <script type="text/javascript " src="/server.js "></script>
+        <script type="text/javascript " src="script/script.js "></script>
   </body>
 
   </html>
