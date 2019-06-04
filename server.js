@@ -57,8 +57,8 @@ app.get('/log-out', logout);
 app.get('/list', allusers);
 
 app.post('/createaccount1', form1);
-app.post('/createaccount2' + ":id", upload.single('profilepicture'), form2);
-app.post('/createaccount3' + ":id", upload.any(), form3);
+app.post('/createaccount2' + ':id', upload.single('profilepicture'), form2);
+app.post('/createaccount3' + ':id', upload.any(), form3);
 app.post('/', checkLogin);
 app.post('/settings', changeSettings);
 /* // Go to the profilepage
