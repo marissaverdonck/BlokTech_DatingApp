@@ -53,7 +53,6 @@ app.get('/', function welcome(req, res) {
       next(err)
     } else {
       res.render('index', { data: data, user: req.session.user });
-      console.log("session:" + req.session.user);
     }
   }
 });
@@ -68,7 +67,6 @@ app.get('/profile', function(req, res) {
     if (err) {
       next(err)
     } else {
-      console.log('hallo user:' + req.session.user)
       res.render('profile', { data: data, user: req.session.user })
     }
   }
@@ -81,7 +79,6 @@ app.get('/search', function(req, res) {
     if (err) {
       next(err)
     } else {
-      console.log('hallo user:' + req.session.user)
       res.render('search', { data: data, user: req.session.user });
     }
   }
@@ -93,7 +90,6 @@ app.get('/settings', function(req, res) {
     if (err) {
       next(err)
     } else {
-      console.log('hallo user:' + req.session.user)
       res.render('settings', { data: data, user: req.session.user })
     }
   }
@@ -124,7 +120,8 @@ app.post('/createaccount1', form1);
 app.post('/createaccount2' + ":id", upload.single('profilepicture'), form2)
 app.post('/createaccount3' + ":id", upload.any(), form3)
 app.post('/', checkLogin)
-  // Go to the profilepage
+app.post('/settings', changeSettings);
+// Go to the profilepage
 app.get('/profile' + ':id', finduser);
 app.delete('/profile' + ':id', removeuser);
 
@@ -140,7 +137,6 @@ function checkLogin(req, res) {
     if (password === data.password) {
       req.session.user = data;
       res.redirect('search');
-      console.log('password correct, user:' + req.session.user)
     } else {
       res.redirect('/');
       console.log('password incorrect');
@@ -221,7 +217,6 @@ function form2(req, res) {
     } else {
       //Redirects the browser to the given path
       res.redirect('/createaccount3' + id)
-      console.log("test")
     }
   }
 }
@@ -249,10 +244,37 @@ function form3(req, res) {
     } else {
       //Redirects the browser to the given path
       res.redirect('/search')
-      console.log("test")
     }
   }
 }
+
+function changeSettings(req, res) {
+  var id = req.session.user._id;
+  db.collection('data').update({
+      _id: new mongo.ObjectID(id)
+    }, {
+      $set: {
+        name: req.body.name,
+        dateofbirth: req.body.dateofbirth,
+        location: req.body.location,
+        gender: req.body.gender,
+        orientation: req.body.orientation,
+        agefrom: req.body.agefrom,
+        agetill: req.body.agetill,
+      },
+    },
+    done)
+
+  function done(err, data) {
+    if (err) {
+      next(err)
+    } else {
+      //Redirects the browser to the given path
+      res.redirect('/profile')
+    }
+  }
+}
+
 
 // delete data
 function removeuser(req, res) {

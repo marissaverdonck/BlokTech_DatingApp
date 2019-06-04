@@ -6,41 +6,32 @@
       <section id="settings">
         <a href="profile" id="back">
           < back</a>
-            <form action="settings" method="get">
+            <form method="post">
               <fieldset>
                 <legend></legend>
                 <% if (user) { %>
-                  <img src="upload/<%= user.profilepicture %>" alt="gebruiker"><br />
-                  <label for="profilepicture">Change your profile picture:</label>
-                  <input type="file" id="profilepicture" name="profilepicture" accept="image/png, image/jpeg"><br />
-
 
                   <label for="name"> First Name</label>
-                  <input name="name" id="name" type="text" placeholder="<%= user.name %>" required><br />
-
+                  <input name="name" id="name" type="text" value="<%= user.name %>"><br />
                   <label for="dateofbirth"> Date of birth </label>
-                  <input name="dateofbirth" id="dateofbirth" type="date " placeholder="<%= user.dateofbirth %>" required><br />
-
+                  <input name="dateofbirth" id="dateofbirth" type="date " value="<%= user.dateofbirth %>"><br />
                   <label for="location "> Place of residence </label>
-                  <input name="location" id="location" type="text" placeholder="<%= user.location %>" required><br />
-
+                  <input name="location" id="location" type="text" value="<%= user.location %>"><br />
                   <label for="gender" id="gender"> Gender </label>
                   <p><input id="gender" type="radio" name="gender" value="men" <% if (user.gender=="men" ) { %> checked="checked"
                     <% } %> /> Men
                       <input id="gender" type="radio" name="gender" value="women" <% if (user.gender=="women" ) { %> checked="checked"
                       <% } %> />Women</p>
-
                   <label for="orientation" id="orientation"> I'm looking for a </label>
                   <p><input name="orientation" id="orientation" type="checkbox" value="men" <% if (user.orientation=="men" ) { %> checked="checked"
                     <% } %>/> Men
                       <input name="orientation" id="orientation" type="checkbox" value="women" <% if (user.orientation=="women" ) { %> checked="checked"
                       <% } %>
                         /> Women</p>
-
                   <label for="agefrom"> minimum age</label>
-                  <input name="agefrom" id="agefrom" type="text" placeholder="<%= user.agefrom %>" required>
+                  <input name="agefrom" id="agefrom" type="text" value="<%= user.agefrom %>">
                   <label for="agetill"> maximum age</label>
-                  <input name="agetill" id="agetill" type="text" placeholder="<%= user.agetill %>" required><br />
+                  <input name="agetill" id="agetill" type="text" value="<%= user.agetill %>"><br />
                   <input id="button" type="submit" name="submit" value="Save settings" />
               </fieldset>
             </form>
@@ -49,7 +40,6 @@
       <% } %>
         <script type="text/javascript" src="/server.js"></script>
         <script type="text/javascript" src="script/script.js"></script>
-
   </body>
 
   </html>
