@@ -113,17 +113,28 @@ app.get('/user1', function(req, res) {
 app.get('/itsamatch', function(req, res) {
   res.render('itsamatch', )
 });
+app.get('/log-out', logout);
 // Open page and get all data from data array  
 app.get('/list', allusers);
 //Handle a post request
 app.post('/createaccount1', form1);
-app.post('/createaccount2' + ":id", upload.single('profilepicture'), form2)
-app.post('/createaccount3' + ":id", upload.any(), form3)
-app.post('/', checkLogin)
+app.post('/createaccount2' + ":id", upload.single('profilepicture'), form2);
+app.post('/createaccount3' + ":id", upload.any(), form3);
+app.post('/', checkLogin);
 app.post('/settings', changeSettings);
 // Go to the profilepage
 app.get('/profile' + ':id', finduser);
 app.delete('/profile' + ':id', removeuser);
+
+function logout(req, res) {
+  req.session.destroy(function(err) {
+    if (err) {
+      next(err)
+    } else {
+      res.redirect('/')
+    }
+  })
+};
 
 
 function checkLogin(req, res) {
@@ -261,6 +272,8 @@ function changeSettings(req, res) {
         orientation: req.body.orientation,
         agefrom: req.body.agefrom,
         agetill: req.body.agetill,
+
+
       },
     },
     done)
@@ -270,7 +283,9 @@ function changeSettings(req, res) {
       next(err)
     } else {
       //Redirects the browser to the given path
-      res.redirect('/profile')
+      console.log("user: " +
+        req.session.user._id);
+      res.redirect('/settings')
     }
   }
 }
