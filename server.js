@@ -19,7 +19,6 @@ mongo.MongoClient.connect(url, function(err, client) {
   db = client.db(process.env.DB_NAME)
 });
 
-
 // Require modules
 const notifications = require('./functions/notifications');
 const createaccount1 = require('./functions/createaccount1');
@@ -50,11 +49,8 @@ const sess = {
 app.use(express.static('static'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session(sess));
-
 app.set('view engine', 'ejs');
 app.set('views', 'views');
-
-// Announce the pages to the browser and render it
 app.get('/', welcome);
 app.get('/notifications', notifications)
 app.get('/profile', profile);
@@ -68,16 +64,13 @@ app.get('/user1', user1);
 app.get('/itsamatch', itsamatch)
 app.get('/log-out', logout);
 app.get('/list', allusers);
-
 app.post('/createaccount1', form1);
 app.post('/createaccount2' + ':id', upload.single('profilepicture'), form2);
 app.post('/createaccount3' + ':id', upload.any(), form3);
 app.post('/', checkLogin);
 app.post('/settings', changeSettings);
-
 app.use(notfound);
 app.listen(port, listen)
-
 
 /* Bronnen:
 dandevri, 2019- mongodb-server - https://github.com/cmda-bt/be-course-18-19/blob/master/examples/mongodb-server/index.js
