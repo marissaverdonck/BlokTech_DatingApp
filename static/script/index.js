@@ -49,8 +49,6 @@ var loadFile5 = function(event) {
   reader.readAsDataURL(event.target.files[0]);
 }
 
-
-
 //Bron: https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
 
 /* 
