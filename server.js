@@ -72,9 +72,10 @@ app.post('/settings', changeSettings);
 app.use(notfound);
 app.listen(port, listen)
 
-// Open in browser: http://localhost:3000
+/* 
+Open in browser: http://localhost:3000
 
-/* Bronnen:
+Bronnen:
 dandevri, 2019- mongodb-server - https://github.com/cmda-bt/be-course-18-19/blob/master/examples/mongodb-server/index.js
 dandevri, 2019- Express-server - https://github.com/cmda-bt/be-course-18-19/blob/master/examples/express-server/index.js
 CMD Be course, 2019- Lecture 2 - https://docs.google.com/presentation/d/1uT6CVMdNig-I9oSwEHI-QiadINH96HYyRC-BIIPxhSI/edit#slide=id.g4e3b0a72ee_0_36
