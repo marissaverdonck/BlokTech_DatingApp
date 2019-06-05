@@ -1,5 +1,3 @@
-//http://localhost:3000
-
 // Require dependencies
 const camelCase = require('camel-case');
 const express = require('express');
@@ -88,3 +86,4 @@ CMD Be course, 2019- Lecture 2 - https://docs.google.com/presentation/d/1uT6CVMd
 CMD Be course, 2019 - Lecture 3 - https://docs.google.com/presentation/d/137YTmMadaUNCJ2ksKHzU_NCZT-BIv3q9tGhXc38EZ3g/edit#slide=id.g4e3b0a74b9_1_861
 MD Be course, 2019 - Lecture 4 - https://docs.google.com/presentation/d/1kN7TLs3_wbZykrM0BK7mQlofaXXSOq-BgsqsugUgh7Q/edit#slide=id.g33c7310eb9_0_676
 */
+// Open in browser: http://localhost:3000
