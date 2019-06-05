@@ -72,6 +72,8 @@ app.post('/settings', changeSettings);
 app.use(notfound);
 app.listen(port, listen)
 
+// Open in browser: http://localhost:3000
+
 /* Bronnen:
 dandevri, 2019- mongodb-server - https://github.com/cmda-bt/be-course-18-19/blob/master/examples/mongodb-server/index.js
 dandevri, 2019- Express-server - https://github.com/cmda-bt/be-course-18-19/blob/master/examples/express-server/index.js
@@ -79,4 +81,3 @@ CMD Be course, 2019- Lecture 2 - https://docs.google.com/presentation/d/1uT6CVMd
 CMD Be course, 2019 - Lecture 3 - https://docs.google.com/presentation/d/137YTmMadaUNCJ2ksKHzU_NCZT-BIv3q9tGhXc38EZ3g/edit#slide=id.g4e3b0a74b9_1_861
 MD Be course, 2019 - Lecture 4 - https://docs.google.com/presentation/d/1kN7TLs3_wbZykrM0BK7mQlofaXXSOq-BgsqsugUgh7Q/edit#slide=id.g33c7310eb9_0_676
 */
-// Open in browser: http://localhost:3000
