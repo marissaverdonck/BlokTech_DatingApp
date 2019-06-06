@@ -12,7 +12,7 @@ The user can create a profile and indicate preferences such as age and gender. E
 If you like 4 interests of each other, you are a match! Now you can see the profile from your match, the things you like about each other and say hi.
 
 ## Research 
-Waarom heb ik deze app gemaakt? waar zijn mijn ideeen op gebaseerd? Waarom heb ik bepaalde keuzes gemaakt? You can read it all at my [Wiki](https://github.com/marissaverdonck/BlokTech_DatingApp/wiki)
+What are my ideas based on? Why have I made certain choices? You can read it all at my [Wiki](https://github.com/marissaverdonck/BlokTech_DatingApp/wiki)
 
 ## Installation
 1. Open up your terminal
