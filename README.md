@@ -1,6 +1,9 @@
 # InterMatching
 InterMatching is a datingapp where you look for a match based on interests. This can be hobby's, your favourite music, bucketlist goals ect. Look for interests that appeal to you, like them and who knows you might meet your dream match! 
 
+![readme](https://user-images.githubusercontent.com/43657951/59035393-7b1fb880-886d-11e9-8102-a5ce34797d49.png)
+
+
 ## Research 
 You can find my research in the [Wiki](https://github.com/marissaverdonck/BlokTech_DatingApp/wiki)
 
