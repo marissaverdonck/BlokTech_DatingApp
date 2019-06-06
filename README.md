@@ -1,7 +1,7 @@
 # InterMatching
 InterMatching is a datingapp where you look for a match based on interests. This can be hobby's, your favourite music, bucketlist goals ect. Look for interests that appeal to you, like them and who knows you might meet your dream match! 
 
-![readme](https://user-images.githubusercontent.com/43657951/59035972-b53d8a00-886e-11e9-8379-dca055e8e58a.png)
+![readme](https://user-images.githubusercontent.com/43657951/59036074-e7e78280-886e-11e9-82d1-8dc962bed687.png)
 
 
 ## Feature 
