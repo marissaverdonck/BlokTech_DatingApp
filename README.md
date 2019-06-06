@@ -1,10 +1,7 @@
 # InterMatching
 InterMatching is a datingapp where you look for a match based on interests. This can be hobby's, your favourite music, bucketlist goals ect. Look for interests that appeal to you, like them and who knows you might meet your dream match! 
 
-![readme](https://user-images.githubusercontent.com/43657951/59036919-81636400-8870-11e9-8b50-7f6d3a89b45f.png)
-
-
-
+![readme](https://user-images.githubusercontent.com/43657951/59041826-adcfae00-8879-11e9-881e-60e8ce3c687f.png)
 
 ## Feature 
 The user can create a profile and indicate preferences such as age and gender. Each user places 6 interests with an image on his profile. This can always be changed later. All the data is stored in the MongoDB database.
