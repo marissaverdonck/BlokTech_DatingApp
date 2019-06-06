@@ -26,12 +26,7 @@ function form3(req, res) {
       _id: new mongo.ObjectID(id)
     }, {
       $set: {
-        interest1: req.body.interest1,
-        interest2: req.body.interest2,
-        interest3: req.body.interest3,
-        interest4: req.body.interest4,
-        interest5: req.body.interest5,
-        interest6: req.body.interest6,
+        interests: req.body.interest,
         pictures: req.files,
       },
     },

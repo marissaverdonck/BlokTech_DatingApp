@@ -74,7 +74,6 @@ app.listen(port, listen)
 
 /* 
 Open in browser: http://localhost:3000
-
 Bronnen:
 dandevri, 2019- mongodb-server - https://github.com/cmda-bt/be-course-18-19/blob/master/examples/mongodb-server/index.js
 dandevri, 2019- Express-server - https://github.com/cmda-bt/be-course-18-19/blob/master/examples/express-server/index.js
