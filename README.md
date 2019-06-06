@@ -4,6 +4,8 @@ InterMatching is a datingapp where you look for a match based on interests. This
 ![readme](https://user-images.githubusercontent.com/43657951/59035393-7b1fb880-886d-11e9-8102-a5ce34797d49.png)
 
 
+## Feature 
+
 ## Research 
 You can find my research in the [Wiki](https://github.com/marissaverdonck/BlokTech_DatingApp/wiki)
 
@@ -36,6 +38,13 @@ Start Mongodb in a new terminaltab
 ```
 mongod
 ```
+
+## Database structure
+
+<img width="407" alt="Schermafbeelding 2019-06-05 om 22 41 29" src="https://user-images.githubusercontent.com/43657951/59035836-6d1e6780-886e-11e9-9429-c6468f2c839d.png">
+
+
+
 
 ## License
 [MIT License](https://github.com/marissaverdonck/BlokTech_DatingApp/blob/master/license)
