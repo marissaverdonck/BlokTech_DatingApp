@@ -7,6 +7,8 @@ InterMatching is a datingapp where you look for a match based on interests. This
 
 
 ## Feature 
+The user can create a profile and indicate preferences such as age and gender. Each user places 6 interests with an image on his profile. This can always be changed later. All the data is stored in the MongoDB database.
+If you like 4 interests of each other, you are a match! Now you can see the profile from your match, the things you like about each other and say hi.
 
 ## Research 
 You can find my research in the [Wiki](https://github.com/marissaverdonck/BlokTech_DatingApp/wiki)
