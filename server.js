@@ -1,16 +1,12 @@
 // Require dependencies
-const camelCase = require('camel-case');
 const express = require('express');
 const app = express();
 const port = 3000;
-const slug = require('slug');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const multer = require('multer');
-const find = require('array-find');
 const mongo = require('mongodb');
 var upload = multer({ dest: 'static/upload/' });
-var db = null;
 require('dotenv').config();
 var url = process.env.DB_HOST;
 mongo.MongoClient.connect(url, { useNewUrlParser: true }, function(err, client) {
