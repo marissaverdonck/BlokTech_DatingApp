@@ -5,9 +5,11 @@ const app = express();
 const port = 3000;
 const slug = require('slug');
 const bodyParser = require('body-parser');
+const session = require('express-session');
 const multer = require('multer');
 const find = require('array-find');
 const mongo = require('mongodb');
+var cookieParser = require('cookie-parser')
 var upload = multer({ dest: 'static/upload/' });
 var db = null;
 require('dotenv').config();
@@ -17,7 +19,8 @@ mongo.MongoClient.connect(url, { useNewUrlParser: true }, function(err, client) 
     throw err
   db = client.db(process.env.DB_NAME)
 });
-const session = require('express-session');
+
+
 
 // Require modules
 const notifications = require('./functions/notifications');
@@ -48,6 +51,7 @@ const sess = {
 
 app.use(express.static('static'));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser())
 app.use(session(sess));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
