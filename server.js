@@ -9,7 +9,6 @@ const session = require('express-session');
 const multer = require('multer');
 const find = require('array-find');
 const mongo = require('mongodb');
-var cookieParser = require('cookie-parser')
 var upload = multer({ dest: 'static/upload/' });
 var db = null;
 require('dotenv').config();
@@ -51,7 +50,6 @@ const sess = {
 
 app.use(express.static('static'));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser())
 app.use(session(sess));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
