@@ -12,8 +12,8 @@ const session = require('express-session');
 var upload = multer({ dest: 'static/upload/' });
 var db = null;
 require('dotenv').config();
-var url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT;
-mongo.MongoClient.connect(url, function(err, client) {
+var url = process.env.DB_HOST;
+mongo.MongoClient.connect(url, { useNewUrlParser: true }, function(err, client) {
   if (err)
     throw err
   db = client.db(process.env.DB_NAME)
@@ -70,7 +70,7 @@ app.post('/createaccount3' + ':id', upload.any(), form3);
 app.post('/', checkLogin);
 app.post('/settings', changeSettings);
 app.use(notfound);
-app.listen(port, listen)
+app.listen(process.env.PORT);
 
 /* 
 Open in browser: http://localhost:3000
