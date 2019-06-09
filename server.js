@@ -8,7 +8,6 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const find = require('array-find');
 const mongo = require('mongodb');
-const session = require('express-session');
 var upload = multer({ dest: 'static/upload/' });
 var db = null;
 require('dotenv').config();
@@ -18,6 +17,7 @@ mongo.MongoClient.connect(url, { useNewUrlParser: true }, function(err, client) 
     throw err
   db = client.db(process.env.DB_NAME)
 });
+const session = require('express-session');
 
 // Require modules
 const notifications = require('./functions/notifications');
