@@ -19,8 +19,6 @@ mongo.MongoClient.connect(url, { useNewUrlParser: true }, function(err, client) 
   db = client.db(process.env.DB_NAME)
 });
 
-
-
 // Require modules
 const notifications = require('./functions/notifications');
 const createaccount1 = require('./functions/createaccount1');
