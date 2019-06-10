@@ -1,5 +1,8 @@
 // Require dependencies
+const bodyParser = require('body-parser');
+const multer = require('multer');
 const mongo = require('mongodb');
+const session = require('express-session');
 var upload = multer({ dest: 'static/upload/' });
 var db = null;
 require('dotenv').config();
