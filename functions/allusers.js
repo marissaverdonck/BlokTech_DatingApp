@@ -1,4 +1,5 @@
 // Require dependencies
+const bodyParser = require('body-parser');
 const multer = require('multer');
 const mongo = require('mongodb');
 const session = require('express-session');
