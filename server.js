@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const camelcase = require('camelcase');
 const multer = require('multer');
 const mongo = require('mongodb');
 var upload = multer({ dest: 'static/upload/' });
