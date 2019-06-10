@@ -1,8 +1,4 @@
 // Require dependencies
-const express = require('express');
-const app = express();
-const port = 3000;
-const bodyParser = require('body-parser');
 const multer = require('multer');
 const mongo = require('mongodb');
 const session = require('express-session');
