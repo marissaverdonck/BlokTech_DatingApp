@@ -40,6 +40,10 @@ Open a new terminaltab and start Mongodb
 ```
 mongod
 ```
+Go to the browser to open the application
+```
+http://localhost:3000
+```
 
 ## Database structure
 
