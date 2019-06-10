@@ -1,6 +1,7 @@
 // Require dependencies
 const express = require('express');
 const app = express();
+var slug = require('slug')
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const multer = require('multer');
