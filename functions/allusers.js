@@ -1,12 +1,8 @@
 // Require dependencies
-const camelCase = require('camel-case');
 const express = require('express');
 const app = express();
 const port = 3000;
-const slug = require('slug');
-const bodyParser = require('body-parser');
 const multer = require('multer');
-const find = require('array-find');
 const mongo = require('mongodb');
 const session = require('express-session');
 var upload = multer({ dest: 'static/upload/' });
