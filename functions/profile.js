@@ -1,5 +1,5 @@
 // Require dependencies
-cconst multer = require('multer');
+const multer = require('multer');
 const mongo = require('mongodb');
 const session = require('express-session');
 var upload = multer({ dest: 'static/upload/' });
